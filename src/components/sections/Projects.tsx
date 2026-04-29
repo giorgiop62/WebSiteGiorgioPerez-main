@@ -5,61 +5,32 @@ import p4 from "@/assets/project-4.png";
 import p5 from "@/assets/project-5.png";
 import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
+import { useI18n } from "@/lib/i18n";
 
-const projects = [
-  { 
-    title: "andreanimanola.com", 
-    desc: "E-commerce artistico per la vendita di quadri, con focus su UX e conversioni.", 
-    tech: "WordPress · WooCommerce", 
-    img: p1, 
-    href: "https://andreanimanola.com" 
-  },
-  { 
-    title: "jurgen-confrontaofferte.it", 
-    desc: "Sito WordPress con form avanzati per la generazione e gestione dei clienti.", 
-    tech: "WordPress · Form · Lead Generation", 
-    img: p3, 
-    href: "https://jurgen-confrontaofferte.it" 
-  },
-  { 
-    title: "lorenzosalvaticoach.it", 
-    desc: "Sito vetrina sviluppato in React con form interattivo per profilare e acquisire nuovi utenti.", 
-    tech: "React · UX · Form", 
-    img: p5, 
-    href: "https://www.lorenzosalvaticoach.it/" 
-  },
-  { 
-    title: "maydaymassage.it", 
-    desc: "Sito vetrina in React con sistema di prenotazione e acquisto gift card.", 
-    tech: "React · Booking · UX", 
-    img: p2, 
-    href: "https://maydaymassage.it" 
-  },
-  { 
-    title: "alfredopumilia.com", 
-    desc: "Sito vetrina realizzato in WordPress per artista, con gestione concerti ed eventi.", 
-    tech: "WordPress · Event Management · UX", 
-    img: p4, 
-    href: "https://alfredopumilia.com" 
-  },
-];
+const projectImages = [p1, p3, p5, p2, p4];
 
 export const Projects = () => {
   const ref = useReveal<HTMLDivElement>();
+  const { t } = useI18n();
+  const projects = t.projects.items.map((project, index) => ({
+    ...project,
+    img: projectImages[index],
+  }));
+
   return (
     <section id="projects" className="py-32 md:py-48 bg-secondary/30">
       <div className="container mx-auto">
         <div ref={ref} className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="section-label mb-6">
-              <span className="hairline mr-4 align-middle" /> Selected work
+              <span className="hairline mr-4 align-middle" /> {t.projects.label}
             </p>
             <h2 className="font-display text-4xl md:text-6xl leading-[1.05]">
-              Una selezione di <span className="italic text-vesuvio">progetti recenti</span>.
+              {t.projects.titleStart} <span className="italic text-vesuvio">{t.projects.titleHighlight}</span>{t.projects.titleEnd}
             </h2>
           </div>
           <p className="text-muted-foreground max-w-sm">
-            Ogni lavoro nasce da un dialogo: con il cliente, con il contesto, con la materia digitale.
+            {t.projects.intro}
           </p>
         </div>
 

@@ -1,16 +1,17 @@
 import { useEffect, useState } from "react";
 import logo from "@/assets/logo.png";
-
-const links = [
-  { href: "#about", label: "Chi sono" },
-  { href: "#projects", label: "Progetti" },
-  { href: "#tech", label: "Tecnologie" },
-  { href: "#contact", label: "Contatti" },
-];
+import { useI18n, type Language } from "@/lib/i18n";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { language, setLanguage, t } = useI18n();
+  const links = [
+    { href: "#about", label: t.nav.about },
+    { href: "#projects", label: t.nav.projects },
+    { href: "#tech", label: t.nav.tech },
+    { href: "#contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -36,15 +37,16 @@ export const Navbar = () => {
               {l.label}
             </a>
           ))}
+          <LanguageToggle language={language} setLanguage={setLanguage} label={t.nav.languageLabel} />
           <a
             href="/cv.pdf"
             download
             className="text-sm border border-vesuvio/60 text-vesuvio px-4 py-2 hover:bg-vesuvio hover:text-primary-foreground transition-all duration-300"
           >
-            Scarica CV
+            {t.nav.downloadCv}
           </a>
         </nav>
-        <button aria-label="Toggle menu" onClick={() => setOpen(!open)} className="md:hidden text-foreground">
+        <button aria-label={t.nav.toggleMenu} onClick={() => setOpen(!open)} className="md:hidden text-foreground">
           <div className={`w-6 h-px bg-foreground transition-transform ${open ? "rotate-45 translate-y-[3px]" : ""}`} />
           <div className={`w-6 h-px bg-foreground mt-1.5 transition-opacity ${open ? "opacity-0" : ""}`} />
           <div className={`w-6 h-px bg-foreground mt-1.5 transition-transform ${open ? "-rotate-45 -translate-y-[7px]" : ""}`} />
@@ -58,8 +60,9 @@ export const Navbar = () => {
                 {l.label}
               </a>
             ))}
+            <LanguageToggle language={language} setLanguage={setLanguage} label={t.nav.languageLabel} />
             <a href="/cv.pdf" download className="text-vesuvio border border-vesuvio/60 px-4 py-2 inline-block w-fit">
-              Scarica CV
+              {t.nav.downloadCv}
             </a>
           </div>
         </div>
@@ -67,3 +70,35 @@ export const Navbar = () => {
     </header>
   );
 };
+
+const LanguageToggle = ({
+  language,
+  setLanguage,
+  label,
+}: {
+  language: Language;
+  setLanguage: (language: Language) => void;
+  label: string;
+}) => (
+  <div
+    className="inline-flex items-center border border-border text-xs uppercase tracking-[0.2em]"
+    role="group"
+    aria-label={label}
+  >
+    {(["it", "en"] as const).map((option) => (
+      <button
+        key={option}
+        type="button"
+        onClick={() => setLanguage(option)}
+        className={`px-3 py-2 transition-all duration-300 ${
+          language === option
+            ? "bg-vesuvio text-primary-foreground"
+            : "text-muted-foreground hover:text-foreground"
+        }`}
+        aria-pressed={language === option}
+      >
+        {option}
+      </button>
+    ))}
+  </div>
+);

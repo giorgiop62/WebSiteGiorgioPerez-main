@@ -1,8 +1,10 @@
 import { useReveal } from "@/hooks/useReveal";
 import logo from "@/assets/about.jpeg";
+import { useI18n } from "@/lib/i18n";
 
 export const About = () => {
   const ref = useReveal<HTMLDivElement>();
+  const { t } = useI18n();
   return (
     <section id="about" className="py-32 md:py-48 container mx-auto">
       <div ref={ref} className="reveal grid md:grid-cols-12 gap-12 md:gap-20 items-center">
@@ -24,22 +26,14 @@ export const About = () => {
 
         <div className="md:col-span-7">
           <p className="section-label mb-6">
-            <span className="hairline mr-4 align-middle" /> Chi sono
+            <span className="hairline mr-4 align-middle" /> {t.about.label}
           </p>
           <h2 className="font-display text-4xl md:text-6xl leading-[1.05] text-balance">
-            Trasformo idee in <span className="italic text-vesuvio">esperienze digitali</span> curate fin nei dettagli.
+            {t.about.titleStart} <span className="italic text-vesuvio">{t.about.titleHighlight}</span> {t.about.titleEnd}
           </h2>
           <div className="mt-10 space-y-5 text-foreground/75 max-w-xl text-[15px] leading-relaxed">
-            <p>
-              Sono Giorgio Perez, Full-Stack Web Developer con esperienza nello sviluppo di gestionali,
-              siti web ed e-commerce. Lavoro al confine tra design e codice, con attenzione all'esperienza
-              utente e all'ottimizzazione delle performance.
-            </p>
-            <p>
-              Integro strumenti di Intelligenza Artificiale per automatizzare processi e migliorare i risultati.
-              Ho lavorato in Finital come sviluppatore web e IT support, e oggi seguo come freelance
-              progetti che spaziano dall'arte all'e-commerce, fino al marketing digitale.
-            </p>
+            <p>{t.about.body1}</p>
+            <p>{t.about.body2}</p>
           </div>
 
           <div className="mt-12 grid grid-cols-3 gap-4 max-w-md">

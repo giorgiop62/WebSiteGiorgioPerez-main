@@ -1,6 +1,8 @@
 import { Instagram, Linkedin, Github, Download } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export const Footer = () => {
+  const { t } = useI18n();
   const socials = [
     { icon: Instagram, href: "https://instagram.com/", label: "Instagram" },
     { icon: Linkedin, href: "https://linkedin.com/in/giorgio-perez", label: "LinkedIn" },
@@ -14,7 +16,7 @@ export const Footer = () => {
             Giorgio Perez<span className="text-vesuvio">.</span>
           </p>
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">
-            Full-Stack Web Developer
+            {t.footer.role}
           </p>
         </div>
 
@@ -39,12 +41,12 @@ export const Footer = () => {
           className="group inline-flex items-center gap-3 border border-vesuvio/60 text-vesuvio px-6 py-3 text-sm tracking-[0.2em] uppercase hover:bg-vesuvio hover:text-primary-foreground transition-all duration-500"
         >
           <Download className="w-4 h-4" />
-          Scarica CV
+          {t.footer.downloadCv}
         </a>
       </div>
       <div className="container mx-auto mt-12 pt-6 border-t border-border/60 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Giorgio Perez — Tutti i diritti riservati.</p>
-        <p>Designed & built with care.</p>
+        <p>© {new Date().getFullYear()} Giorgio Perez — {t.footer.rights}</p>
+        <p>{t.footer.built}</p>
       </div>
     </footer>
   );

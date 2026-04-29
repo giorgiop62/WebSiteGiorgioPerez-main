@@ -2,10 +2,12 @@ import { useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { useToast } from "@/hooks/use-toast";
 import { Send } from "lucide-react";
+import { useI18n } from "@/lib/i18n";
 
 export const Contact = () => {
   const ref = useReveal<HTMLDivElement>();
   const { toast } = useToast();
+  const { t } = useI18n();
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -23,41 +25,25 @@ export const Contact = () => {
       !form.subject.trim() ||
       !form.message.trim()
     ) {
-      toast({ title: "Compila tutti i campi", variant: "destructive" });
+      toast({ title: t.contact.missingFields, variant: "destructive" });
       return;
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      toast({ title: "Email non valida", variant: "destructive" });
+      toast({ title: t.contact.invalidEmail, variant: "destructive" });
       return;
     }
 
     setSending(true);
 
-    // 👉 messaggio WhatsApp migliorato
-    const text = `Ciao Giorgio 👋
-
-Ti contatto dal tuo sito web.
-
-📝 Oggetto: ${form.subject}
-
-👤 Nome: ${form.name}
-📧 Email: ${form.email}
-
-💬 Messaggio:
-${form.message}
-
-A presto!`;
-
+    const text = t.contact.whatsAppMessage(form);
     const encodedText = encodeURIComponent(text);
     const phone = "393926137642";
     const url = `https://wa.me/${phone}?text=${encodedText}`;
 
-    // 👉 apertura WhatsApp
     window.open(url, "_blank");
 
-    // feedback + reset
-    toast({ title: "Reindirizzamento a WhatsApp..." });
+    toast({ title: t.contact.redirecting });
     setForm({ name: "", email: "", subject: "", message: "" });
     setSending(false);
   };
@@ -70,25 +56,24 @@ A presto!`;
       >
         <div>
           <p className="section-label mb-6">
-            <span className="hairline mr-4 align-middle" /> Contatti
+            <span className="hairline mr-4 align-middle" /> {t.contact.label}
           </p>
           <h2 className="font-display text-4xl md:text-6xl leading-[1.05] text-balance">
-            Hai un'idea? <br />
-            <span className="italic text-vesuvio">Parliamone</span>.
+            {t.contact.titleStart} <br />
+            <span className="italic text-vesuvio">{t.contact.titleHighlight}</span>.
           </h2>
           <p className="mt-8 text-muted-foreground max-w-md">
-            Scrivimi due righe sul tuo progetto. Risponderò entro 24 ore con
-            qualche domanda e una prima impressione.
+            {t.contact.intro}
           </p>
           <div className="mt-12 space-y-3 text-sm">
-            <p className="text-muted-foreground">Email</p>
+            <p className="text-muted-foreground">{t.contact.email}</p>
             <a
               href="mailto:giorgiop62@gmail.com"
               className="font-display text-2xl hover:text-vesuvio transition-colors block"
             >
               giorgiop62@gmail.com
             </a>
-            <p className="text-muted-foreground pt-4">Telefono</p>
+            <p className="text-muted-foreground pt-4">{t.contact.phone}</p>
             <a
               href="tel:+393926137642"
               className="font-display text-2xl hover:text-vesuvio transition-colors block"
@@ -96,30 +81,30 @@ A presto!`;
               +39 392 613 7642
             </a>
             <p className="text-muted-foreground pt-4 text-xs uppercase tracking-[0.25em]">
-              Arezzo, Italia
+              {t.contact.location}
             </p>
           </div>
         </div>
 
         <form onSubmit={onSubmit} className="space-y-8">
           <Field
-            label="Nome"
+            label={t.contact.fields.name}
             value={form.name}
             onChange={(v) => setForm({ ...form, name: v })}
           />
           <Field
-            label="Email"
+            label={t.contact.fields.email}
             type="email"
             value={form.email}
             onChange={(v) => setForm({ ...form, email: v })}
           />
           <Field
-            label="Oggetto"
+            label={t.contact.fields.subject}
             value={form.subject}
             onChange={(v) => setForm({ ...form, subject: v })}
           />
           <Field
-            label="Messaggio"
+            label={t.contact.fields.message}
             textarea
             value={form.message}
             onChange={(v) => setForm({ ...form, message: v })}
@@ -130,7 +115,7 @@ A presto!`;
             disabled={sending}
             className="group inline-flex items-center gap-3 bg-vesuvio text-primary-foreground px-8 py-4 text-sm tracking-wider uppercase hover:bg-vesuvio/90 transition-all duration-500 disabled:opacity-60"
           >
-            {sending ? "Invio..." : "Invia messaggio"}
+            {sending ? t.contact.sending : t.contact.submit}
             <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
         </form>

@@ -1,4 +1,5 @@
 import { useReveal } from "@/hooks/useReveal";
+import { useI18n } from "@/lib/i18n";
 
 const techs = [
   { name: "HTML5", svg: <path d="M12 2L3 4l1.5 17L12 23l7.5-2L21 4 12 2zm5.5 6H8.7l.2 2.4h8.4l-.6 7.1L12 19l-4.7-1.5-.3-3.2h2.3l.2 1.6 2.5.7 2.5-.7.3-3.2H7l-.6-6.7h11.4l-.3 2z" /> },
@@ -17,12 +18,13 @@ const techs = [
 
 export const Tech = () => {
   const ref = useReveal<HTMLDivElement>();
+  const { t } = useI18n();
   return (
     <section id="tech" className="py-32 md:py-48 container mx-auto">
       <div ref={ref} className="reveal text-center max-w-2xl mx-auto mb-16">
-        <p className="section-label mb-6">Toolkit</p>
+        <p className="section-label mb-6">{t.tech.label}</p>
         <h2 className="font-display text-4xl md:text-6xl leading-[1.05] text-balance">
-          Tecnologie con cui <span className="italic text-vesuvio">creo ogni giorno</span>.
+          {t.tech.titleStart} <span className="italic text-vesuvio">{t.tech.titleHighlight}</span>{t.tech.titleEnd}
         </h2>
       </div>
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border max-w-5xl mx-auto border border-border">
