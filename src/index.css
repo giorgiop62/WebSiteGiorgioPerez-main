@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Napoli palette: deep navy + Vesuvio orange + warm sand */
+    --background: 222 45% 9%;
+    --foreground: 36 30% 94%;
+
+    --card: 222 40% 12%;
+    --card-foreground: 36 30% 94%;
+
+    --popover: 222 42% 11%;
+    --popover-foreground: 36 30% 94%;
+
+    --primary: 18 85% 55%;            /* Vesuvio orange */
+    --primary-foreground: 222 45% 8%;
+
+    --secondary: 222 35% 16%;
+    --secondary-foreground: 36 30% 94%;
+
+    --muted: 222 30% 18%;
+    --muted-foreground: 36 12% 70%;
+
+    --accent: 18 85% 55%;
+    --accent-foreground: 222 45% 8%;
+
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 36 30% 95%;
+
+    --border: 222 30% 20%;
+    --input: 222 30% 18%;
+    --ring: 18 85% 55%;
+
+    --radius: 0.25rem;
+
+    /* Custom tokens */
+    --navy: 222 55% 18%;             /* logo navy */
+    --navy-deep: 222 60% 12%;
+    --vesuvio: 18 85% 55%;            /* logo orange */
+    --sea: 205 55% 45%;
+    --sand: 36 45% 88%;
+    --ink: 222 50% 6%;
+
+    --gradient-overlay: linear-gradient(180deg, hsl(222 60% 8% / 0.55) 0%, hsl(222 60% 6% / 0.85) 100%);
+    --gradient-vesuvio: linear-gradient(135deg, hsl(18 85% 60%), hsl(8 75% 48%));
+    --shadow-elegant: 0 30px 80px -20px hsl(222 60% 3% / 0.7);
+    --shadow-soft: 0 10px 30px -10px hsl(222 60% 3% / 0.5);
+
+    --transition-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter Tight', 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: "ss01", "ss02", "cv11";
+    letter-spacing: -0.01em;
+  }
+  ::selection { background: hsl(var(--vesuvio) / 0.35); color: hsl(var(--foreground)); }
+}
+
+@layer components {
+  .font-display {
+    font-family: 'Fraunces', 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    font-optical-sizing: auto;
+    font-variation-settings: "opsz" 144, "SOFT" 50;
+    letter-spacing: -0.035em;
+  }
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s var(--transition-smooth), transform 1s var(--transition-smooth);
+  }
+  .reveal.in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .text-balance { text-wrap: balance; }
+  .hairline {
+    width: 60px; height: 1px;
+    background: hsl(var(--vesuvio));
+    display: inline-block;
+  }
+  .section-label {
+    @apply text-xs uppercase tracking-[0.3em] text-muted-foreground;
+  }
+}
+
+@layer utilities {
+  .bg-overlay { background: var(--gradient-overlay); }
+  .text-vesuvio { color: hsl(var(--vesuvio)); }
+  .bg-vesuvio { background: hsl(var(--vesuvio)); }
+  .bg-navy { background: hsl(var(--navy)); }
+  .bg-navy-deep { background: hsl(var(--navy-deep)); }
+  .border-vesuvio { border-color: hsl(var(--vesuvio)); }
+  .shadow-elegant { box-shadow: var(--shadow-elegant); }
+  .gradient-vesuvio { background: var(--gradient-vesuvio); }
+}
