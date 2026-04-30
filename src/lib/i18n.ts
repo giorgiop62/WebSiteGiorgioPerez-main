@@ -33,7 +33,7 @@ export const translations = {
       label: "Chi sono",
       titleStart: "Trasformo idee in",
       titleHighlight: "esperienze digitali",
-      titleEnd: "curate fin nei dettagli.",
+      titleEnd: "con cura ai dettagli.",
       body1:
         "Sono Giorgio Perez, Full-Stack Web Developer con esperienza nello sviluppo di gestionali, siti web ed e-commerce. Lavoro al confine tra design e codice, con attenzione all'esperienza utente e all'ottimizzazione delle performance.",
       body2:
@@ -175,7 +175,7 @@ A presto!`,
       label: "About",
       titleStart: "I turn ideas into",
       titleHighlight: "digital experiences",
-      titleEnd: "crafted down to the details.",
+      titleEnd: "with care for details.",
       body1:
         "I am Giorgio Perez, a Full-Stack Web Developer experienced in building management platforms, websites, and e-commerce projects. I work where design meets code, with a sharp focus on user experience and performance optimization.",
       body2:
