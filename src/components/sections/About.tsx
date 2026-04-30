@@ -1,6 +1,9 @@
 import { useReveal } from "@/hooks/useReveal";
 import logo from "@/assets/about.jpeg";
 import { useI18n } from "@/lib/i18n";
+import ermes from "@/assets/ermes1.png";
+import ermes2 from "@/assets/ermes2.png";
+import ermes3 from "@/assets/ermes3.png";
 
 export const About = () => {
   const ref = useReveal<HTMLDivElement>();
@@ -36,18 +39,36 @@ export const About = () => {
             <p>{t.about.body2}</p>
           </div>
 
-          <div className="mt-12 grid grid-cols-3 gap-4 max-w-md">
-            {[
-              { n: "Vue", l: "& React" },
-              { n: "Laravel", l: "PHP / MySQL" },
-              { n: "AI", l: "OpenAI · GA4" },
-            ].map((s) => (
-              <div key={s.l} className="border-t border-border pt-4">
-                <p className="font-display text-2xl text-vesuvio">{s.n}</p>
-                <p className="text-xs uppercase tracking-widest text-muted-foreground mt-1">{s.l}</p>
-              </div>
-            ))}
-          </div>
+         <div className="mt-12 grid grid-cols-3 gap-4 max-w-md">
+  
+  <div className="aspect-square overflow-hidden rounded-xl shadow-elegant">
+    <img
+      src={ermes}
+      alt="Giorgio 1"
+      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+
+  <div className="aspect-square overflow-hidden rounded-xl shadow-elegant">
+    <img
+      src={ermes2}
+      alt="Ermes"
+      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+
+  <div className="aspect-square overflow-hidden rounded-xl shadow-elegant">
+    <img
+      src={ermes3}
+      alt="Giorgio 2"
+      className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+
+</div>
         </div>
       </div>
     </section>
