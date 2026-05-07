@@ -14,6 +14,9 @@ const techs = [
   { name: "Claude AI", svg: <circle cx="12" cy="12" r="10" /> },
   { name: "Photoshop", svg: <rect x="3" y="3" width="18" height="18" rx="2" /> },
   { name: "Canva", svg: <circle cx="12" cy="12" r="10" /> },
+  {name: "Git", svg: <path d="M12 2L3 4l1.5 17L12 23l7.5-2L21 4 12 2zm-1.5 5h3v3h-3V7zm0 4.5h3v3h-3v-3z" /> },
+  {name: "Postman", svg: <rect x="3" y="3" width="18" height="18" rx="2" /> },
+  
 ];
 
 export const Tech = () => {
