@@ -11,6 +11,7 @@ export const Contact = () => {
   const [form, setForm] = useState({
     name: "",
     email: "",
+    company: "",
     subject: "",
     message: "",
   });
@@ -22,6 +23,7 @@ export const Contact = () => {
     if (
       !form.name.trim() ||
       !form.email.trim() ||
+      !form.company.trim() ||
       !form.subject.trim() ||
       !form.message.trim()
     ) {
@@ -44,7 +46,7 @@ export const Contact = () => {
     window.open(url, "_blank");
 
     toast({ title: t.contact.redirecting });
-    setForm({ name: "", email: "", subject: "", message: "" });
+    setForm({ name: "", email: "", company: "", subject: "", message: "" });
     setSending(false);
   };
 
@@ -97,6 +99,11 @@ export const Contact = () => {
             type="email"
             value={form.email}
             onChange={(v) => setForm({ ...form, email: v })}
+          />
+          <Field
+            label={t.contact.fields.company}
+            value={form.company}
+            onChange={(v) => setForm({ ...form, company: v })}
           />
           <Field
             label={t.contact.fields.subject}

@@ -7,10 +7,11 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const { language, setLanguage, t } = useI18n();
   const links = [
-    { href: "#about", label: t.nav.about },
-    { href: "#projects", label: t.nav.projects },
-    { href: "#tech", label: t.nav.tech },
-    { href: "#contact", label: t.nav.contact },
+    { href: "/#hero", label: t.nav.home },
+    { href: "/#about", label: t.nav.about },
+    { href: "/#projects", label: t.nav.projects },
+    { href: "/#team", label: t.nav.team },
+    { href: "/#contact", label: t.nav.contact },
   ];
 
   useEffect(() => {
@@ -26,9 +27,10 @@ export const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between">
-        <a href="#hero" className="flex items-center gap-3 group">
-          <img src={logo} alt="Giorgio Perez logo" className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-105" />
+        <a href="/#hero" className="flex items-center gap-3 group">
+          <img src={logo} alt="Ermes & Co. logo" className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-105" />
           <span className="font-display text-lg tracking-wide hidden sm:inline">
+            Ermes &amp; Co.
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-10">
@@ -38,13 +40,6 @@ export const Navbar = () => {
             </a>
           ))}
           <LanguageToggle language={language} setLanguage={setLanguage} label={t.nav.languageLabel} />
-          <a
-            href="/cv.pdf"
-            download
-            className="text-sm border border-vesuvio/60 text-vesuvio px-4 py-2 hover:bg-vesuvio hover:text-primary-foreground transition-all duration-300"
-          >
-            {t.nav.downloadCv}
-          </a>
         </nav>
         <button aria-label={t.nav.toggleMenu} onClick={() => setOpen(!open)} className="md:hidden text-foreground">
           <div className={`w-6 h-px bg-foreground transition-transform ${open ? "rotate-45 translate-y-[3px]" : ""}`} />
@@ -61,9 +56,6 @@ export const Navbar = () => {
               </a>
             ))}
             <LanguageToggle language={language} setLanguage={setLanguage} label={t.nav.languageLabel} />
-            <a href="/cv.pdf" download className="text-vesuvio border border-vesuvio/60 px-4 py-2 inline-block w-fit">
-              {t.nav.downloadCv}
-            </a>
           </div>
         </div>
       )}

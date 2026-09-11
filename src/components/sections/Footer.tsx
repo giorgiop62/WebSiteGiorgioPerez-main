@@ -1,4 +1,5 @@
-import { Instagram, Linkedin, Github, Download } from "lucide-react";
+import { Instagram, Linkedin, Github } from "lucide-react";
+import logo from "@/assets/logo.png";
 import { useI18n } from "@/lib/i18n";
 
 export const Footer = () => {
@@ -12,9 +13,12 @@ export const Footer = () => {
     <footer className="border-t border-border py-16">
       <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         <div>
-          <p className="font-display text-2xl">
-            Giorgio Perez<span className="text-vesuvio">.</span>
-          </p>
+          <div className="flex items-center gap-3">
+            <img src={logo} alt="Ermes & Co. logo" className="w-10 h-10 object-contain" />
+            <p className="font-display text-2xl">
+              Ermes &amp; Co<span className="text-vesuvio">.</span>
+            </p>
+          </div>
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">
             {t.footer.role}
           </p>
@@ -35,18 +39,9 @@ export const Footer = () => {
           ))}
         </div>
 
-        <a
-          href="/cv.pdf"
-          download
-          className="group inline-flex items-center gap-3 border border-vesuvio/60 text-vesuvio px-6 py-3 text-sm tracking-[0.2em] uppercase hover:bg-vesuvio hover:text-primary-foreground transition-all duration-500"
-        >
-          <Download className="w-4 h-4" />
-          {t.footer.downloadCv}
-        </a>
       </div>
       <div className="container mx-auto mt-12 pt-6 border-t border-border/60 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Giorgio Perez — {t.footer.rights}</p>
-        <p>{t.footer.built}</p>
+        <p>© {new Date().getFullYear()} Ermes &amp; Co. — {t.footer.rights}</p>
       </div>
     </footer>
   );

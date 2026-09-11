@@ -44,17 +44,26 @@ export const Hero = () => {
 
       <div className="relative h-full container mx-auto flex flex-col justify-center">
         <div className="max-w-3xl">
-         
+          <img
+            src={logo}
+            alt="Ermes & Co. logo"
+            className="w-20 h-20 object-contain mb-8 opacity-0 animate-[fadeUp_1.2s_0.25s_forwards]"
+          />
           <h1 className="font-display text-5xl sm:text-7xl md:text-8xl leading-[0.95] text-balance opacity-0 animate-[fadeUp_1.2s_0.5s_forwards]">
-            Giorgio<br />
-            <span className="italic text-vesuvio">Perez</span>
+            {t.hero.brand}<br />
+            <span className="italic text-vesuvio text-4xl sm:text-6xl md:text-7xl">
+              {t.hero.sloganFirst}
+            </span>
           </h1>
+          <p className="mt-6 font-display text-3xl md:text-5xl leading-tight opacity-0 animate-[fadeUp_1.2s_0.7s_forwards]">
+            {t.hero.sloganSecond}
+          </p>
           <p className="mt-8 text-lg md:text-xl text-foreground/85 max-w-xl opacity-0 animate-[fadeUp_1.2s_0.9s_forwards]">
             {t.hero.intro}
           </p>
           <div className="mt-12 flex flex-wrap items-center gap-6 opacity-0 animate-[fadeUp_1.2s_1.2s_forwards]">
             <a
-              href="#projects"
+              href="#about"
               className="group inline-flex items-center gap-3 bg-vesuvio text-primary-foreground px-8 py-4 text-sm tracking-wider uppercase hover:bg-vesuvio/90 transition-all duration-500"
             >
               {t.hero.projectsCta}

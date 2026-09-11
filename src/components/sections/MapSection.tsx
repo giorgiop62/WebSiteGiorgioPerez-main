@@ -2,9 +2,8 @@ import { Star, MapPin, ExternalLink } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 
-const MAPS_URL = "https://maps.app.goo.gl/uw14Bbv3or3LLwXg9";
-const EMBED_URL =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d24166.62!2d14.247!3d40.8358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2053a5bd367823af%3A0x17bd057923e3b4a4!2sGiorgio%20Perez!5e0!3m2!1sit!2sit!4v1714000000000";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Arezzo%2C%20Italia";
+const EMBED_URL = "https://www.google.com/maps?q=Arezzo%2C%20Italia&output=embed";
 
 export const MapSection = () => {
   const ref = useReveal<HTMLDivElement>();
@@ -48,7 +47,7 @@ export const MapSection = () => {
             <div className="bg-secondary/40 border border-border p-8">
               <div className="flex items-center gap-3 mb-3">
                 <MapPin className="w-5 h-5 text-vesuvio" />
-                <span className="font-display text-2xl">Giorgio Perez</span>
+                <span className="font-display text-2xl">Ermes &amp; Co.</span>
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-display text-3xl text-vesuvio">5.0</span>

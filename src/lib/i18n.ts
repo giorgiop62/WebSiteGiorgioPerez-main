@@ -5,42 +5,49 @@ export type Language = "it" | "en";
 export type ContactFormCopy = {
   name: string;
   email: string;
+  company: string;
   subject: string;
   message: string;
 };
 
-export const STORAGE_KEY = "giorgio-perez-language";
+export const STORAGE_KEY = "ermes-co-language";
 
 export const translations = {
   it: {
     nav: {
-      about: "Chi sono",
+      home: "Home",
+      about: "Chi siamo",
       projects: "Progetti",
-      tech: "Tecnologie",
+      team: "Team",
       contact: "Contatti",
-      downloadCv: "Scarica CV",
       toggleMenu: "Apri menu",
       languageLabel: "Lingua",
     },
     hero: {
+      brand: "Ermes & Co.",
+      sloganFirst: "Noi ci siamo reinventati.",
+      sloganSecond: "Ora reinventiamo il tuo sito.",
       intro:
-        "Creazione digitale, design e sviluppo web — gestionali, e-commerce e siti su misura, con un occhio all'AI.",
-      projectsCta: "Scopri i progetti",
-      contactCta: "Contattami",
+        "Siamo un team di professionisti del digitale. Progettiamo e realizziamo siti web moderni, funzionali e pensati per raccontare davvero chi sei.",
+      projectsCta: "Scopri chi siamo",
+      contactCta: "Parliamo del tuo progetto",
       scroll: "Scroll",
     },
     about: {
-      label: "Chi sono",
-      titleStart: "Trasformo idee in",
-      titleHighlight: "esperienze digitali",
-      titleEnd: "con cura ai dettagli.",
+      label: "Chi siamo",
+      titleStart: "Nati dalla necessità.",
+      titleHighlight: "Cresciuti reinventandoci",
+      titleEnd: ".",
       body1:
-        "Sono Giorgio Perez, Full-Stack Web Developer con esperienza nello sviluppo di gestionali, siti web ed e-commerce. Lavoro al confine tra design e codice, con attenzione all'esperienza utente e all'ottimizzazione delle performance.",
+        "Ermes & Co. nasce quando abbiamo deciso di trasformare una difficoltà in un punto di partenza. Abbiamo investito nella nostra formazione, tra università, corsi professionali e competenze digitali, poi abbiamo scelto di creare noi la nostra opportunità.",
       body2:
-        "Integro strumenti di Intelligenza Artificiale per automatizzare processi e migliorare i risultati. Ho lavorato in Finital come sviluppatore web e IT support, e oggi seguo come freelance progetti che spaziano dall'arte all'e-commerce, fino al marketing digitale.",
+        "Oggi uniamo prospettive diverse per progettare siti web, e-commerce e soluzioni digitali che abbiano senso per chi li usa e per chi li commissiona. Ascoltiamo, capiamo, progettiamo e realizziamo: pochi giri di parole, molto lavoro fatto bene.",
+      valuesTitle: "Etica. Professionalita. Trasparenza.",
+      values:
+        "Non vendiamo soluzioni inutili. Costruiamo strumenti coerenti con identita, obiettivi e budget di ogni progetto.",
     },
     projects: {
-      label: "Selected work",
+      label: "Progetti selezionati",
       titleStart: "Una selezione di",
       titleHighlight: "progetti recenti",
       titleEnd: ".",
@@ -80,7 +87,7 @@ export const translations = {
       ],
     },
     nessunoEscluso: {
-      eyebrow: "Progetto personale / App",
+      eyebrow: "Progetto interno / App",
       titleFirst: "Nessuno",
       titleSecond: "Escluso",
       subtitle: "La bacheca viva della tua città",
@@ -135,39 +142,103 @@ export const translations = {
         "Profili, segnalazioni e affidabilità per una community più sicura.",
     },
     tech: {
-      label: "Toolkit",
+      label: "Strumenti",
       titleStart: "Tecnologie con cui",
-      titleHighlight: "creo ogni giorno",
+      titleHighlight: "lavoriamo ogni giorno",
       titleEnd: ".",
+    },
+    team: {
+      label: "Team",
+      titleStart: "Tre teste,",
+      titleHighlight: "una direzione",
+      titleEnd: ".",
+      intro:
+        "Ermes & Co. e un team piccolo e affiatato: competenze diverse, confronto diretto e la giusta dose di ironia quando il sito decide di fare il misterioso.",
+      discover: "Scopri il profilo",
+      back: "Torna al team",
+      placeholderNote:
+        "Dati del profilo da completare con le informazioni ufficiali del membro.",
+      emptyList: "Informazioni in arrivo.",
+      sections: {
+        bio: "Bio",
+        skills: "Competenze",
+        experience: "Esperienza",
+        education: "Formazione",
+        projects: "Progetti",
+        cv: "CV",
+      },
+      members: [
+        {
+          slug: "giorgio-perez",
+          name: "Giorgio Perez",
+          role: "Co-founder / Web developer",
+          description:
+            "Profilo professionale da completare con bio, competenze e responsabilita ufficiali.",
+          skills: ["Web development"],
+          bio: "Bio da completare con i dati forniti dal team.",
+          experience: ["Esperienze professionali da inserire"],
+          education: ["Formazione da inserire"],
+          projects: ["Progetti da inserire"],
+          cvHref: "",
+        },
+        {
+          slug: "michele-lombardo",
+          name: "Michele Lombardo",
+          role: "Co-founder",
+          description:
+            "Profilo professionale da completare con ruolo, bio, competenze e responsabilita ufficiali.",
+          skills: ["Competenze da inserire"],
+          bio: "Bio da completare con i dati forniti dal team.",
+          experience: ["Esperienze professionali da inserire"],
+          education: ["Formazione da inserire"],
+          projects: ["Progetti da inserire"],
+          cvHref: "",
+        },
+        {
+          slug: "alessia-iervolino",
+          name: "Alessia Iervolino",
+          role: "Co-founder / Copywriter e fotografa",
+          description:
+            "Profilo professionale da completare con bio, competenze e responsabilita ufficiali.",
+          skills: ["Copywriting", "Fotografia"],
+          bio: "Bio da completare con i dati forniti dal team.",
+          experience: ["Esperienze professionali da inserire"],
+          education: ["Formazione da inserire"],
+          projects: ["Progetti da inserire"],
+          cvHref: "",
+        },
+      ],
     },
     contact: {
       label: "Contatti",
       titleStart: "Hai un'idea?",
-      titleHighlight: "Parliamone",
+      titleHighlight: "Reinventiamola insieme",
       intro:
-        "Scrivimi due righe sul tuo progetto. Risponderò entro 24 ore con qualche domanda e una prima impressione.",
+        "Raccontaci cosa hai in mente. Partiamo dalle tue esigenze e costruiamo insieme la soluzione piu adatta.",
       email: "Email",
       phone: "Telefono",
       location: "Arezzo, Italia",
       fields: {
         name: "Nome",
         email: "Email",
-        subject: "Oggetto",
+        company: "Azienda / Attivita",
+        subject: "Tipo di progetto",
         message: "Messaggio",
       },
-      submit: "Invia messaggio",
+      submit: "Inizia il progetto",
       sending: "Invio...",
       missingFields: "Compila tutti i campi",
       invalidEmail: "Email non valida",
       redirecting: "Reindirizzamento a WhatsApp...",
-      whatsAppMessage: (form: ContactFormCopy) => `Ciao Giorgio
+      whatsAppMessage: (form: ContactFormCopy) => `Ciao Ermes & Co.
 
-Ti contatto dal tuo sito web.
+Vi contatto dal vostro sito web.
 
-Oggetto: ${form.subject}
+Tipo di progetto: ${form.subject}
 
 Nome: ${form.name}
 Email: ${form.email}
+Azienda / Attivita: ${form.company}
 
 Messaggio:
 ${form.message}
@@ -175,16 +246,16 @@ ${form.message}
 A presto!`,
     },
     map: {
-      label: "Dove mi trovi",
+      label: "Dove ci trovi",
       openMaps: "Apri in Google Maps",
-      iframeTitle: "Giorgio Perez su Google Maps",
-      reviewsLabel: "Website designer · Recensioni Google",
+      iframeTitle: "Ermes & Co. su Google Maps",
+      reviewsLabel: "Web agency · Recensioni Google",
       leaveReview: "Lascia una recensione su Google",
       reviews: [
         {
           name: "Andrea M.",
           rating: 5,
-          text: "Giorgio ha realizzato il mio e-commerce con grande professionalità. Ascolta, propone soluzioni e consegna nei tempi. Consigliatissimo.",
+          text: "Ermes & Co. ha realizzato il nostro e-commerce con grande professionalita. Ascoltano, propongono soluzioni e consegnano nei tempi. Consigliatissimi.",
         },
         {
           name: "Jurgen R.",
@@ -199,10 +270,8 @@ A presto!`,
       ],
     },
     footer: {
-      role: "Full-Stack Web Developer",
-      downloadCv: "Scarica CV",
+      role: "Web agency",
       rights: "Tutti i diritti riservati.",
-      built: "Designed & built with care.",
     },
     notFound: {
       message: "Pagina non trovata",
@@ -211,30 +280,36 @@ A presto!`,
   },
   en: {
     nav: {
+      home: "Home",
       about: "About",
       projects: "Projects",
-      tech: "Technologies",
+      team: "Team",
       contact: "Contact",
-      downloadCv: "Download CV",
       toggleMenu: "Open menu",
       languageLabel: "Language",
     },
     hero: {
+      brand: "Ermes & Co.",
+      sloganFirst: "We reinvented ourselves.",
+      sloganSecond: "Now we reinvent your website.",
       intro:
-        "Digital creation, design, and web development: management tools, e-commerce, and custom websites with an eye on AI.",
-      projectsCta: "Explore projects",
-      contactCta: "Contact me",
+        "We are a digital team designing and building modern, functional websites that actually tell who you are.",
+      projectsCta: "Discover us",
+      contactCta: "Let's talk about your project",
       scroll: "Scroll",
     },
     about: {
       label: "About",
-      titleStart: "I turn ideas into",
-      titleHighlight: "digital experiences",
-      titleEnd: "with care for details.",
+      titleStart: "Born from necessity.",
+      titleHighlight: "Built through reinvention",
+      titleEnd: ".",
       body1:
-        "I am Giorgio Perez, a Full-Stack Web Developer experienced in building management platforms, websites, and e-commerce projects. I work where design meets code, with a sharp focus on user experience and performance optimization.",
+        "Ermes & Co. began when we decided to turn a difficult moment into a starting point. We invested in our education, through university, professional training, and digital skills, then chose to create our own opportunity.",
       body2:
-        "I integrate Artificial Intelligence tools to automate processes and improve outcomes. I worked at Finital as a web developer and IT support specialist, and today I follow freelance projects ranging from art to e-commerce and digital marketing.",
+        "Today we combine different perspectives to design websites, e-commerce experiences, and digital solutions that make sense for both users and clients. We listen, understand, design, and build: fewer buzzwords, more useful work.",
+      valuesTitle: "Ethics. Professionalism. Transparency.",
+      values:
+        "We do not sell unnecessary solutions. We build tools aligned with each project's identity, goals, and budget.",
     },
     projects: {
       label: "Selected work",
@@ -333,38 +408,102 @@ A presto!`,
     },
     tech: {
       label: "Toolkit",
-      titleStart: "Technologies I",
-      titleHighlight: "create with every day",
+      titleStart: "Technologies we",
+      titleHighlight: "work with every day",
       titleEnd: ".",
+    },
+    team: {
+      label: "Team",
+      titleStart: "Three minds,",
+      titleHighlight: "one direction",
+      titleEnd: ".",
+      intro:
+        "Ermes & Co. is a small, close-knit team: different skills, direct collaboration, and just enough irony when a website decides to act mysterious.",
+      discover: "Discover profile",
+      back: "Back to team",
+      placeholderNote:
+        "Profile data to be completed with the official information for this member.",
+      emptyList: "Information coming soon.",
+      sections: {
+        bio: "Bio",
+        skills: "Skills",
+        experience: "Experience",
+        education: "Education",
+        projects: "Projects",
+        cv: "CV",
+      },
+      members: [
+        {
+          slug: "giorgio-perez",
+          name: "Giorgio Perez",
+          role: "Co-founder / Web developer",
+          description:
+            "Professional profile to complete with official bio, skills, and responsibilities.",
+          skills: ["Web development"],
+          bio: "Bio to complete with data provided by the team.",
+          experience: ["Professional experience to add"],
+          education: ["Education to add"],
+          projects: ["Projects to add"],
+          cvHref: "",
+        },
+        {
+          slug: "michele-lombardo",
+          name: "Michele Lombardo",
+          role: "Co-founder",
+          description:
+            "Professional profile to complete with official role, bio, skills, and responsibilities.",
+          skills: ["Skills to add"],
+          bio: "Bio to complete with data provided by the team.",
+          experience: ["Professional experience to add"],
+          education: ["Education to add"],
+          projects: ["Projects to add"],
+          cvHref: "",
+        },
+        {
+          slug: "alessia-iervolino",
+          name: "Alessia Iervolino",
+          role: "Co-founder / Copywriter and photographer",
+          description:
+            "Professional profile to complete with official bio, skills, and responsibilities.",
+          skills: ["Copywriting", "Photography"],
+          bio: "Bio to complete with data provided by the team.",
+          experience: ["Professional experience to add"],
+          education: ["Education to add"],
+          projects: ["Projects to add"],
+          cvHref: "",
+        },
+      ],
     },
     contact: {
       label: "Contact",
       titleStart: "Have an idea?",
-      titleHighlight: "Let's talk",
+      titleHighlight: "Let's reinvent it together",
       intro:
-        "Write me a few lines about your project. I will reply within 24 hours with a few questions and a first impression.",
+        "Tell us what you have in mind. We start from your needs and build the right solution together.",
       email: "Email",
       phone: "Phone",
       location: "Arezzo, Italy",
       fields: {
         name: "Name",
         email: "Email",
-        subject: "Subject",
+        company: "Company / Business",
+        subject: "Project type",
         message: "Message",
       },
-      submit: "Send message",
+      submit: "Start the project",
       sending: "Sending...",
       missingFields: "Please fill in all fields",
       invalidEmail: "Invalid email",
       redirecting: "Redirecting to WhatsApp...",
-      whatsAppMessage: (form: ContactFormCopy) => `Hi Giorgio,
+      whatsAppMessage: (form: ContactFormCopy) => `Hi Ermes & Co.,
 
-I am contacting you from your website.
+We are contacting you from your website.
 
-Subject: ${form.subject}
+Project type: ${form.subject}
 
 Name: ${form.name}
 Email: ${form.email}
+Company / Business: ${form.company}
 
 Message:
 ${form.message}
@@ -372,16 +511,16 @@ ${form.message}
 Talk soon!`,
     },
     map: {
-      label: "Where to find me",
+      label: "Where to find us",
       openMaps: "Open in Google Maps",
-      iframeTitle: "Giorgio Perez on Google Maps",
-      reviewsLabel: "Website designer · Google reviews",
+      iframeTitle: "Ermes & Co. on Google Maps",
+      reviewsLabel: "Web agency · Google reviews",
       leaveReview: "Leave a review on Google",
       reviews: [
         {
           name: "Andrea M.",
           rating: 5,
-          text: "Giorgio built my e-commerce website with great professionalism. He listens, proposes solutions, and delivers on time. Highly recommended.",
+          text: "Ermes & Co. built our e-commerce website with great professionalism. They listen, propose solutions, and deliver on time. Highly recommended.",
         },
         {
           name: "Jurgen R.",
@@ -396,10 +535,8 @@ Talk soon!`,
       ],
     },
     footer: {
-      role: "Full-Stack Web Developer",
-      downloadCv: "Download CV",
+      role: "Web agency",
       rights: "All rights reserved.",
-      built: "Designed & built with care.",
     },
     notFound: {
       message: "Page not found",
@@ -408,7 +545,7 @@ Talk soon!`,
   },
 } as const;
 
-export type TranslationSet = typeof translations.it;
+export type TranslationSet = (typeof translations)[Language];
 
 export type I18nContextValue = {
   language: Language;
