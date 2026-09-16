@@ -3,11 +3,12 @@ import p2 from "@/assets/project-2.png";
 import p3 from "@/assets/project-3.png";
 import p4 from "@/assets/project-4.png";
 import p5 from "@/assets/project-5.png";
+import p6 from "@/assets/project-6.png";
 import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 
-const projectImages = [p1, p3, p5, p2, p4];
+const projectImages = [p1, p3, p5, p2, p4, p6];
 
 export const Projects = () => {
   const ref = useReveal<HTMLDivElement>();
