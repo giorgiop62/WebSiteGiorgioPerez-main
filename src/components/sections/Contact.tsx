@@ -70,10 +70,10 @@ export const Contact = () => {
           <div className="mt-12 space-y-3 text-sm">
             <p className="text-muted-foreground">{t.contact.email}</p>
             <a
-              href="mailto:giorgiop62@gmail.com"
+              href="mailto:info@ermesmedia.com"
               className="font-display text-2xl hover:text-vesuvio transition-colors block"
             >
-              giorgiop62@gmail.com
+              info@ermesmedia.com
             </a>
             <p className="text-muted-foreground pt-4">{t.contact.phone}</p>
             <a

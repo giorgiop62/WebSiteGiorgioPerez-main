@@ -38,10 +38,18 @@ export const translations = {
       titleStart: "Nati dalla necessità.",
       titleHighlight: "Cresciuti reinventandoci",
       titleEnd: ".",
-      body1:
-        "Ermes & Co. nasce quando abbiamo deciso di trasformare una difficoltà in un punto di partenza. Abbiamo investito nella nostra formazione, tra università, corsi professionali e competenze digitali, poi abbiamo scelto di creare noi la nostra opportunità.",
-      body2:
-        "Oggi uniamo prospettive diverse per progettare siti web, e-commerce e soluzioni digitali che abbiano senso per chi li usa e per chi li commissiona. Ascoltiamo, capiamo, progettiamo e realizziamo: pochi giri di parole, molto lavoro fatto bene.",
+
+      body1: `Ermes & Co. nasce da un'idea semplice: Napoli ha tutto il talento, l'energia e la creatività per competere ad armi pari con le grandi città del digitale — le mancava solo qualcuno disposto a scommetterci davvero.
+
+    Non ci siamo limitati a fondare una web agency. Oltre a progettare siti web e applicazioni, ci siamo dati un obiettivo più grande: rilanciare Napoli come polo di innovazione, dare voce e spazio a chi qui costruisce impresa, organizzare eventi che mettano in contatto professionisti, creativi e aziende del territorio, creando una rete che va oltre il singolo progetto.`,
+
+      body2: `Mentre molti giovani lasciano Napoli per cercare altrove ciò che qui sembra mancare, noi abbiamo scelto la strada opposta: restare e reinventarci. Una scelta non nostalgica ma strategica, nata dalla convinzione che il talento napoletano meriti di essere valorizzato da qui, con standard e ambizioni internazionali.
+
+    Questo non significa lavorare solo con realtà locali: collaboriamo con aziende e professionisti in tutta Italia e oltre, portando ovunque lo stesso approccio — competenza tecnica, cura del dettaglio e una visione che nasce da Napoli ma non si ferma qui.
+
+    Crediamo che ogni sito che realizziamo, ogni prodotto digitale che sviluppiamo, sia anche un mattone di qualcosa di più ampio: una rete di professionisti e aziende che si connettono, collaborano e crescono insieme, partendo da Napoli per arrivare ovunque.
+
+    ErmesMedia è questo: tecnologia con radici, ambizione senza confine.`,
       valuesTitle: "Etica. Professionalita. Trasparenza.",
       values:
         "Non vendiamo soluzioni inutili. Costruiamo strumenti coerenti con identita, obiettivi e budget di ogni progetto.",
@@ -223,7 +231,7 @@ export const translations = {
         "Raccontaci cosa hai in mente. Partiamo dalle tue esigenze e costruiamo insieme la soluzione piu adatta.",
       email: "Email",
       phone: "Telefono",
-      location: "Arezzo, Italia",
+      location: "Napoli, Italia",
       fields: {
         name: "Nome",
         email: "Email",
@@ -309,10 +317,16 @@ A presto!`,
       titleStart: "Born from necessity.",
       titleHighlight: "Built through reinvention",
       titleEnd: ".",
-      body1:
-        "Ermes & Co. began when we decided to turn a difficult moment into a starting point. We invested in our education, through university, professional training, and digital skills, then chose to create our own opportunity.",
-      body2:
-        "Today we combine different perspectives to design websites, e-commerce experiences, and digital solutions that make sense for both users and clients. We listen, understand, design, and build: fewer buzzwords, more useful work.",
+      body1: `Ermes & Co. was born from a simple idea: Naples has the talent, energy, and creativity to compete on equal terms with the major digital cities — it only lacked people willing to truly bet on it.
+
+    We didn't limit ourselves to founding a web agency. Beyond designing websites and applications, we set ourselves a bigger goal: to relaunch Naples as a hub of innovation, to give voice and space to those who build businesses here, and to organise events that connect professionals, creatives, and local companies — creating a network that goes beyond any single project.`,
+      body2: `While many young people leave Naples to look elsewhere for what seems to be missing here, we chose the opposite path: to stay and reinvent ourselves. A choice that is not nostalgic but strategic, born from the belief that Neapolitan talent deserves to be valued from here, with international standards and ambitions.
+
+    This does not mean we work only with local organisations: we collaborate with companies and professionals across Italy and beyond, bringing the same approach everywhere — technical competence, attention to detail, and a vision born in Naples that doesn't stop there.
+
+    We believe every site we build, every digital product we develop, is also a building block of something larger: a network of professionals and companies that connect, collaborate, and grow together, starting from Naples and reaching far beyond.
+
+    Ermes & Co. is this: technology with roots, ambition without borders.`,
       valuesTitle: "Ethics. Professionalism. Transparency.",
       values:
         "We do not sell unnecessary solutions. We build tools aligned with each project's identity, goals, and budget.",
@@ -494,7 +508,7 @@ A presto!`,
         "Tell us what you have in mind. We start from your needs and build the right solution together.",
       email: "Email",
       phone: "Phone",
-      location: "Arezzo, Italy",
+      location: "Naples, Italy",
       fields: {
         name: "Name",
         email: "Email",

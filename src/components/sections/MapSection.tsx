@@ -2,8 +2,8 @@ import { Star, MapPin, ExternalLink } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 
-const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Arezzo%2C%20Italia";
-const EMBED_URL = "https://www.google.com/maps?q=Arezzo%2C%20Italia&output=embed";
+const MAPS_URL = "https://www.google.com/maps/search/?api=1&query=Napoli%2C%20Italia";
+const EMBED_URL = "https://www.google.com/maps?q=Napoli%2C%20Italia&output=embed";
 
 export const MapSection = () => {
   const ref = useReveal<HTMLDivElement>();
