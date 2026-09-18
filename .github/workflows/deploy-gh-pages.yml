@@ -13,8 +13,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
-      - name: Install dependencies
-        run: npm ci
+          cache: 'npm'
+      - name: Diagnostics: node/npm/git
+        run: |
+          node -v
+          npm -v
+          git --version
+          pwd
+          ls -la
+      - name: Install dependencies (ci)
+        run: |
+          npm ci --prefer-offline --no-audit --progress=false
+      - name: Show disk usage and node_modules size
+        run: |
+          du -sh . || true
+          du -sh node_modules || true
       - name: Build
         run: npm run build
       - name: Add CNAME for custom domain
