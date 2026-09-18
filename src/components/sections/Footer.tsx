@@ -5,7 +5,7 @@ import { useI18n } from "@/lib/i18n";
 export const Footer = () => {
   const { t } = useI18n();
   const socials = [
-    { icon: Instagram, href: "https://www.instagram.com/giorgioperezweb", label: "Instagram" },
+    { icon: Instagram, href: "https://www.instagram.com/ermes.media/", label: "Instagram" },
     { icon: Linkedin, href: "https://linkedin.com/in/giorgio-perez", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/giorgiop62", label: "GitHub" },
   ];
