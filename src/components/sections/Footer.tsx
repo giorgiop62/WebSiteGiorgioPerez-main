@@ -8,7 +8,7 @@ export const Footer = () => {
   const { t } = useI18n();
   const socials = [
     { icon: Instagram, href: "https://www.instagram.com/ermes.media/", label: "Instagram" },
-    { icon: Linkedin, href: "https://linkedin.com/in/giorgio-perez", label: "LinkedIn" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/ermes-media/", label: "LinkedIn" },
     { icon: Github, href: "https://github.com/giorgiop62", label: "GitHub" },
   ];
   return (
