@@ -1,5 +1,7 @@
 import { Instagram, Linkedin, Github } from "lucide-react";
 import logo from "@/assets/logo.png";
+import { Link } from "react-router-dom";
+import { openCookiePreferences } from "@/lib/consent";
 import { useI18n } from "@/lib/i18n";
 
 export const Footer = () => {
@@ -41,7 +43,13 @@ export const Footer = () => {
 
       </div>
       <div className="container mx-auto mt-12 pt-6 border-t border-border/60 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Ermes Media — {t.footer.rights}</p>
+        <div className="flex flex-wrap gap-x-4 gap-y-1">
+          <p>© {new Date().getFullYear()} Ermes Media — {t.footer.rights}</p>
+          <Link to="/cookie-policy" className="hover:text-vesuvio transition-colors">{t.cookies.footer.policy}</Link>
+          <button type="button" onClick={openCookiePreferences} className="hover:text-vesuvio transition-colors">
+            {t.cookies.footer.preferences}
+          </button>
+        </div>
         <address className="not-italic flex flex-wrap gap-x-4 gap-y-1">
           <span>{t.contact.location}</span>
           <a href="mailto:info@ermesmedia.com" className="hover:text-vesuvio transition-colors">info@ermesmedia.com</a>

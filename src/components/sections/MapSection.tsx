@@ -1,4 +1,5 @@
 import { Star, MapPin, ExternalLink } from "lucide-react";
+import { saveConsent, useConsent } from "@/lib/consent";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 
@@ -8,6 +9,7 @@ const EMBED_URL = "https://www.google.com/maps?q=Napoli%2C%20Italia&output=embed
 export const MapSection = () => {
   const ref = useReveal<HTMLDivElement>();
   const { t } = useI18n();
+  const { thirdPartyAllowed } = useConsent();
   return (
     <section id="map" className="py-32 md:py-48">
       <div ref={ref} className="reveal container mx-auto">
@@ -33,14 +35,29 @@ export const MapSection = () => {
 
         <div className="grid lg:grid-cols-5 gap-8">
           <div className="lg:col-span-3 relative overflow-hidden shadow-elegant aspect-[4/3] lg:aspect-auto lg:min-h-[480px] bg-secondary">
-            <iframe
-              src={EMBED_URL}
-              title={t.map.iframeTitle}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 w-full h-full border-0 grayscale-[0.3] contrast-[1.05]"
-              allowFullScreen
-            />
+            {thirdPartyAllowed ? (
+              <iframe
+                src={EMBED_URL}
+                title={t.map.iframeTitle}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 w-full h-full border-0 grayscale-[0.3] contrast-[1.05]"
+                allowFullScreen
+              />
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8 text-center">
+                <MapPin className="w-8 h-8 text-vesuvio" />
+                <p className="font-display text-2xl">{t.cookies.map.blockedTitle}</p>
+                <p className="text-sm text-muted-foreground max-w-sm">{t.cookies.map.blockedText}</p>
+                <button
+                  type="button"
+                  onClick={() => saveConsent({ thirdParty: true })}
+                  className="mt-2 bg-vesuvio text-primary-foreground px-6 py-3 text-xs tracking-wider uppercase hover:bg-vesuvio/90 transition-all duration-300"
+                >
+                  {t.cookies.map.enable}
+                </button>
+              </div>
+            )}
           </div>
 
           <div className="lg:col-span-2 flex flex-col gap-6">

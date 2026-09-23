@@ -292,6 +292,97 @@ A presto!`,
       message: "Pagina non trovata",
       home: "Torna alla Home",
     },
+    cookies: {
+      banner: {
+        title: "Rispettiamo la tua privacy",
+        text: "Usiamo solo strumenti tecnici necessari al funzionamento del sito. Con il tuo consenso carichiamo anche contenuti di terze parti, come la mappa di Google Maps, che possono impostare cookie. Nessun cookie di profilazione o di statistica.",
+        policyLink: "Leggi la Cookie Policy",
+        accept: "Accetta tutti",
+        reject: "Rifiuta",
+        customize: "Personalizza",
+        save: "Salva preferenze",
+        close: "Chiudi e rifiuta",
+        necessaryTitle: "Tecnici (sempre attivi)",
+        necessaryText: "Memorizzano la lingua scelta e le tue preferenze sui cookie. Non richiedono consenso.",
+        thirdPartyTitle: "Contenuti di terze parti",
+        thirdPartyText: "Mappa di Google Maps nella sezione \"Dove ci trovi\". Google può impostare cookie propri.",
+        alwaysOn: "Sempre attivi",
+      },
+      map: {
+        blockedTitle: "Mappa disattivata",
+        blockedText: "Per mostrare la mappa carichiamo Google Maps, che può impostare cookie di terze parti.",
+        enable: "Mostra la mappa",
+      },
+      footer: {
+        policy: "Cookie policy",
+        preferences: "Preferenze cookie",
+      },
+      policy: {
+        label: "Informativa",
+        title: "Cookie Policy",
+        updated: "Ultimo aggiornamento: 23 settembre 2026",
+        back: "Torna alla Home",
+        managePreferences: "Gestisci le preferenze cookie",
+        sections: [
+          {
+            title: "Titolare del trattamento",
+            body: [
+              "Il titolare del trattamento è Ermes Media, con sede a Napoli (Italia). Per qualsiasi richiesta puoi scrivere a info@ermesmedia.com.",
+            ],
+          },
+          {
+            title: "Cosa sono i cookie",
+            body: [
+              "I cookie sono piccoli file di testo che i siti visitati salvano sul dispositivo dell'utente. Strumenti simili, come il localStorage del browser, svolgono funzioni analoghe e sono disciplinati allo stesso modo.",
+            ],
+          },
+          {
+            title: "Strumenti tecnici (senza consenso)",
+            body: [
+              "Il sito usa il localStorage del browser esclusivamente per ricordare la lingua scelta (\"ermes-co-language\") e le tue scelte sui cookie (\"ermes-media-cookie-consent\"). Questi dati restano sul tuo dispositivo, non vengono inviati a noi né a terzi e rimangono finché non li cancelli dal browser.",
+              "Trattandosi di strumenti strettamente necessari, ai sensi dell'art. 122 del Codice Privacy non è richiesto il consenso.",
+            ],
+          },
+          {
+            title: "Contenuti di terze parti (con consenso)",
+            body: [
+              "Nella sezione \"Dove ci trovi\" è presente una mappa fornita da Google Maps (Google Ireland Limited). La mappa viene caricata solo dopo il tuo consenso: da quel momento Google può impostare e leggere cookie propri, secondo la sua informativa (policies.google.com/privacy).",
+              "Se rifiuti, la mappa non viene caricata e puoi comunque aprire la nostra posizione direttamente su Google Maps tramite il link dedicato.",
+            ],
+          },
+          {
+            title: "Font",
+            body: [
+              "I caratteri tipografici del sito sono forniti da Google Fonts. Il servizio non imposta cookie, ma per scaricare i font il browser comunica a Google il tuo indirizzo IP.",
+            ],
+          },
+          {
+            title: "Cosa non usiamo",
+            body: [
+              "Il sito non utilizza cookie di profilazione, pubblicitari o di statistica (analytics).",
+            ],
+          },
+          {
+            title: "Link esterni",
+            body: [
+              "I link verso WhatsApp, Instagram, LinkedIn, GitHub e i siti dei nostri clienti non caricano nulla finché non ci clicchi. Una volta aperti, si applicano le informative dei rispettivi servizi.",
+            ],
+          },
+          {
+            title: "Come gestire il consenso",
+            body: [
+              "Puoi modificare o revocare il consenso in qualsiasi momento tramite il link \"Preferenze cookie\" nel footer di ogni pagina. Puoi inoltre cancellare cookie e dati dei siti dalle impostazioni del tuo browser.",
+            ],
+          },
+          {
+            title: "I tuoi diritti",
+            body: [
+              "In base agli artt. 15-22 del Regolamento UE 2016/679 (GDPR) puoi chiedere l'accesso, la rettifica, la cancellazione dei dati, la limitazione del trattamento e opporti allo stesso, scrivendo a info@ermesmedia.com. Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).",
+            ],
+          },
+        ],
+      },
+    },
   },
   en: {
     nav: {
@@ -569,6 +660,97 @@ Talk soon!`,
     notFound: {
       message: "Page not found",
       home: "Return to Home",
+    },
+    cookies: {
+      banner: {
+        title: "We respect your privacy",
+        text: "We only use technical tools required for the website to work. With your consent we also load third-party content, such as the Google Maps map, which may set cookies. No profiling or analytics cookies.",
+        policyLink: "Read the Cookie Policy",
+        accept: "Accept all",
+        reject: "Reject",
+        customize: "Customize",
+        save: "Save preferences",
+        close: "Close and reject",
+        necessaryTitle: "Technical (always on)",
+        necessaryText: "They remember your language and your cookie preferences. No consent required.",
+        thirdPartyTitle: "Third-party content",
+        thirdPartyText: "Google Maps map in the \"Where to find us\" section. Google may set its own cookies.",
+        alwaysOn: "Always on",
+      },
+      map: {
+        blockedTitle: "Map disabled",
+        blockedText: "To show the map we load Google Maps, which may set third-party cookies.",
+        enable: "Show the map",
+      },
+      footer: {
+        policy: "Cookie policy",
+        preferences: "Cookie preferences",
+      },
+      policy: {
+        label: "Notice",
+        title: "Cookie Policy",
+        updated: "Last updated: 23 September 2026",
+        back: "Return to Home",
+        managePreferences: "Manage cookie preferences",
+        sections: [
+          {
+            title: "Data controller",
+            body: [
+              "The data controller is Ermes Media, based in Naples (Italy). For any request you can write to info@ermesmedia.com.",
+            ],
+          },
+          {
+            title: "What cookies are",
+            body: [
+              "Cookies are small text files that websites store on the user's device. Similar tools, such as the browser's localStorage, serve comparable purposes and are regulated in the same way.",
+            ],
+          },
+          {
+            title: "Technical tools (no consent)",
+            body: [
+              "The website uses the browser's localStorage only to remember your language (\"ermes-co-language\") and your cookie choices (\"ermes-media-cookie-consent\"). This data stays on your device, is not sent to us or third parties, and remains until you clear it from your browser.",
+              "As these tools are strictly necessary, no consent is required under art. 122 of the Italian Privacy Code.",
+            ],
+          },
+          {
+            title: "Third-party content (with consent)",
+            body: [
+              "The \"Where to find us\" section includes a map provided by Google Maps (Google Ireland Limited). The map is loaded only after your consent: from then on Google may set and read its own cookies, according to its privacy policy (policies.google.com/privacy).",
+              "If you reject, the map is not loaded and you can still open our location directly on Google Maps through the dedicated link.",
+            ],
+          },
+          {
+            title: "Fonts",
+            body: [
+              "The website's typefaces are served by Google Fonts. The service does not set cookies, but to download the fonts your browser sends your IP address to Google.",
+            ],
+          },
+          {
+            title: "What we don't use",
+            body: [
+              "The website does not use profiling, advertising or statistics (analytics) cookies.",
+            ],
+          },
+          {
+            title: "External links",
+            body: [
+              "Links to WhatsApp, Instagram, LinkedIn, GitHub and our clients' websites don't load anything until you click them. Once opened, the privacy policies of those services apply.",
+            ],
+          },
+          {
+            title: "Managing your consent",
+            body: [
+              "You can change or withdraw your consent at any time through the \"Cookie preferences\" link in the footer of every page. You can also delete cookies and site data from your browser settings.",
+            ],
+          },
+          {
+            title: "Your rights",
+            body: [
+              "Under articles 15-22 of EU Regulation 2016/679 (GDPR) you can request access, rectification, erasure, restriction of processing and object to it, by writing to info@ermesmedia.com. You also have the right to lodge a complaint with the Italian Data Protection Authority (garanteprivacy.it).",
+            ],
+          },
+        ],
+      },
     },
   },
 } as const;

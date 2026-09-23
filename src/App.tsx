@@ -7,6 +7,8 @@ import { I18nProvider } from "@/lib/I18nProvider";
 import Index from "./pages/Index.tsx";
 import MemberProfile from "./pages/MemberProfile.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import CookiePolicy from "./pages/CookiePolicy.tsx";
+import { CookieBanner } from "@/components/CookieBanner";
 
 const queryClient = new QueryClient();
 
@@ -20,9 +22,11 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/team/:slug" element={<MemberProfile />} />
+            <Route path="/cookie-policy" element={<CookiePolicy />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <CookieBanner />
         </BrowserRouter>
       </I18nProvider>
     </TooltipProvider>
