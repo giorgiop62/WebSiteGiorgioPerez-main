@@ -14,9 +14,9 @@ export const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-10">
         <div>
           <div className="flex items-center gap-3">
-            <img src={logo} alt="Ermes & Co. logo" className="w-10 h-10 object-contain" />
+            <img src={logo} alt="Ermes Media logo" className="w-10 h-10 object-contain" />
             <p className="font-display text-2xl">
-              Ermes &amp; Co<span className="text-vesuvio">.</span>
+              Ermes Media
             </p>
           </div>
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground mt-2">
@@ -41,7 +41,13 @@ export const Footer = () => {
 
       </div>
       <div className="container mx-auto mt-12 pt-6 border-t border-border/60 flex flex-col md:flex-row justify-between gap-3 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} Ermes &amp; Co. — {t.footer.rights}</p>
+        <p>© {new Date().getFullYear()} Ermes Media — {t.footer.rights}</p>
+        <address className="not-italic flex flex-wrap gap-x-4 gap-y-1">
+          <span>{t.contact.location}</span>
+          <a href="mailto:info@ermesmedia.com" className="hover:text-vesuvio transition-colors">info@ermesmedia.com</a>
+          <a href="tel:+393926137642" className="hover:text-vesuvio transition-colors">+39 392 613 7642</a>
+          <a href="tel:+393383737812" className="hover:text-vesuvio transition-colors">+39 338 373 7812</a>
+        </address>
       </div>
     </footer>
   );

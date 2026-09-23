@@ -24,12 +24,12 @@ export const translations = {
       languageLabel: "Lingua",
     },
     hero: {
-      brand: "Ermes & Co.",
+      brand: "Ermes Media",
       sloganFirst: "Noi ci siamo reinventati.",
       sloganSecond: "Ora reinventiamo il tuo sito.",
       intro:
-        "Siamo un team di professionisti del digitale. Progettiamo e realizziamo siti web moderni, funzionali e pensati per raccontare davvero chi sei.",
-      projectsCta: "Scopri chi siamo",
+        "Siamo una web agency di Napoli: progettiamo e realizziamo siti web, e-commerce e applicazioni web moderni, funzionali e pensati per raccontare davvero chi sei.",
+      projectsCta: "Scopri i nostri progetti",
       contactCta: "Parliamo del tuo progetto",
       scroll: "Scroll",
     },
@@ -39,7 +39,7 @@ export const translations = {
       titleHighlight: "Cresciuti reinventandoci",
       titleEnd: ".",
 
-      body1: `Ermes & Co. nasce da un'idea semplice: Napoli ha tutto il talento, l'energia e la creatività per competere ad armi pari con le grandi città del digitale — le mancava solo qualcuno disposto a scommetterci davvero.
+      body1: `Ermes Media nasce da un'idea semplice: Napoli ha tutto il talento, l'energia e la creatività per competere ad armi pari con le grandi città del digitale — le mancava solo qualcuno disposto a scommetterci davvero.
 
     Non ci siamo limitati a fondare una web agency. Oltre a progettare siti web e applicazioni, ci siamo dati un obiettivo più grande: rilanciare Napoli come polo di innovazione, dare voce e spazio a chi qui costruisce impresa, organizzare eventi che mettano in contatto professionisti, creativi e aziende del territorio, creando una rete che va oltre il singolo progetto.`,
 
@@ -49,13 +49,14 @@ export const translations = {
 
     Crediamo che ogni sito che realizziamo, ogni prodotto digitale che sviluppiamo, sia anche un mattone di qualcosa di più ampio: una rete di professionisti e aziende che si connettono, collaborano e crescono insieme, partendo da Napoli per arrivare ovunque.
 
-    ErmesMedia è questo: tecnologia con radici, ambizione senza confine.`,
+    Ermes Media è questo: tecnologia con radici, ambizione senza confine.`,
       valuesTitle: "Etica. Professionalita. Trasparenza.",
       values:
         "Non vendiamo soluzioni inutili. Costruiamo strumenti coerenti con identita, obiettivi e budget di ogni progetto.",
     },
     projects: {
       label: "Progetti selezionati",
+      imageAlt: "Screenshot del sito",
       titleStart: "Una selezione di",
       titleHighlight: "progetti recenti",
       titleEnd: ".",
@@ -167,7 +168,7 @@ export const translations = {
       titleHighlight: "una direzione",
       titleEnd: ".",
       intro:
-        "Ermes & Co. e un team piccolo e affiatato: competenze diverse, confronto diretto e la giusta dose di ironia quando il sito decide di fare il misterioso.",
+        "Ermes Media è un team piccolo e affiatato: competenze diverse, confronto diretto e la giusta dose di ironia quando il sito decide di fare il misterioso.",
       discover: "Scopri il profilo",
       back: "Torna al team",
       placeholderNote:
@@ -244,7 +245,7 @@ export const translations = {
       missingFields: "Compila tutti i campi",
       invalidEmail: "Email non valida",
       redirecting: "Reindirizzamento a WhatsApp...",
-      whatsAppMessage: (form: ContactFormCopy) => `Ciao Ermes & Co.
+      whatsAppMessage: (form: ContactFormCopy) => `Ciao Ermes Media
 
 Vi contatto dal vostro sito web.
 
@@ -262,14 +263,14 @@ A presto!`,
     map: {
       label: "Dove ci trovi",
       openMaps: "Apri in Google Maps",
-      iframeTitle: "Ermes & Co. su Google Maps",
+      iframeTitle: "Ermes Media su Google Maps",
       reviewsLabel: "Web agency · Recensioni Google",
       leaveReview: "Lascia una recensione su Google",
       reviews: [
         {
           name: "Andrea M.",
           rating: 5,
-          text: "Ermes & Co. ha realizzato il nostro e-commerce con grande professionalita. Ascoltano, propongono soluzioni e consegnano nei tempi. Consigliatissimi.",
+          text: "Ermes Media ha realizzato il nostro e-commerce con grande professionalita. Ascoltano, propongono soluzioni e consegnano nei tempi. Consigliatissimi.",
         },
         {
           name: "Jurgen R.",
@@ -303,12 +304,12 @@ A presto!`,
       languageLabel: "Language",
     },
     hero: {
-      brand: "Ermes & Co.",
+      brand: "Ermes Media",
       sloganFirst: "We reinvented ourselves.",
       sloganSecond: "Now we reinvent your website.",
       intro:
-        "We are a digital team designing and building modern, functional websites that actually tell who you are.",
-      projectsCta: "Discover us",
+        "We are a web agency based in Naples, designing and building modern, functional websites, e-commerce stores and web applications that actually tell who you are.",
+      projectsCta: "Discover our projects",
       contactCta: "Let's talk about your project",
       scroll: "Scroll",
     },
@@ -317,7 +318,7 @@ A presto!`,
       titleStart: "Born from necessity.",
       titleHighlight: "Built through reinvention",
       titleEnd: ".",
-      body1: `Ermes & Co. was born from a simple idea: Naples has the talent, energy, and creativity to compete on equal terms with the major digital cities — it only lacked people willing to truly bet on it.
+      body1: `Ermes Media was born from a simple idea: Naples has the talent, energy, and creativity to compete on equal terms with the major digital cities — it only lacked people willing to truly bet on it.
 
     We didn't limit ourselves to founding a web agency. Beyond designing websites and applications, we set ourselves a bigger goal: to relaunch Naples as a hub of innovation, to give voice and space to those who build businesses here, and to organise events that connect professionals, creatives, and local companies — creating a network that goes beyond any single project.`,
       body2: `While many young people leave Naples to look elsewhere for what seems to be missing here, we chose the opposite path: to stay and reinvent ourselves. A choice that is not nostalgic but strategic, born from the belief that Neapolitan talent deserves to be valued from here, with international standards and ambitions.
@@ -326,13 +327,14 @@ A presto!`,
 
     We believe every site we build, every digital product we develop, is also a building block of something larger: a network of professionals and companies that connect, collaborate, and grow together, starting from Naples and reaching far beyond.
 
-    Ermes & Co. is this: technology with roots, ambition without borders.`,
+    Ermes Media is this: technology with roots, ambition without borders.`,
       valuesTitle: "Ethics. Professionalism. Transparency.",
       values:
         "We do not sell unnecessary solutions. We build tools aligned with each project's identity, goals, and budget.",
     },
     projects: {
       label: "Selected work",
+      imageAlt: "Screenshot of the website",
       titleStart: "A selection of",
       titleHighlight: "recent projects",
       titleEnd: ".",
@@ -444,7 +446,7 @@ A presto!`,
       titleHighlight: "one direction",
       titleEnd: ".",
       intro:
-        "Ermes & Co. is a small, close-knit team: different skills, direct collaboration, and just enough irony when a website decides to act mysterious.",
+        "Ermes Media is a small, close-knit team: different skills, direct collaboration, and just enough irony when a website decides to act mysterious.",
       discover: "Discover profile",
       back: "Back to team",
       placeholderNote:
@@ -521,7 +523,7 @@ A presto!`,
       missingFields: "Please fill in all fields",
       invalidEmail: "Invalid email",
       redirecting: "Redirecting to WhatsApp...",
-      whatsAppMessage: (form: ContactFormCopy) => `Hi Ermes & Co.,
+      whatsAppMessage: (form: ContactFormCopy) => `Hi Ermes Media,
 
 We are contacting you from your website.
 
@@ -539,14 +541,14 @@ Talk soon!`,
     map: {
       label: "Where to find us",
       openMaps: "Open in Google Maps",
-      iframeTitle: "Ermes & Co. on Google Maps",
+      iframeTitle: "Ermes Media on Google Maps",
       reviewsLabel: "Web agency · Google reviews",
       leaveReview: "Leave a review on Google",
       reviews: [
         {
           name: "Andrea M.",
           rating: 5,
-          text: "Ermes & Co. built our e-commerce website with great professionalism. They listen, propose solutions, and deliver on time. Highly recommended.",
+          text: "Ermes Media built our e-commerce website with great professionalism. They listen, propose solutions, and deliver on time. Highly recommended.",
         },
         {
           name: "Jurgen R.",

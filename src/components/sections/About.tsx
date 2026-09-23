@@ -5,7 +5,7 @@ export const About = () => {
   const ref = useReveal<HTMLDivElement>();
   const { t } = useI18n();
   return (
-    <section id="about" className="py-32 md:py-48 container mx-auto">
+    <section id="about" className="pt-12 pb-32 md:pt-16 md:pb-48 container mx-auto scroll-mt-20">
       <div ref={ref} className="reveal max-w-5xl">
           <p className="section-label mb-6">
             <span className="hairline mr-4 align-middle" /> {t.about.label}

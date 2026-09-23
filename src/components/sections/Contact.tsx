@@ -82,6 +82,12 @@ export const Contact = () => {
             >
               +39 392 613 7642
             </a>
+            <a
+              href="tel:+393383737812"
+              className="font-display text-2xl hover:text-vesuvio transition-colors block"
+            >
+              +39 338 373 7812
+            </a>
             <p className="text-muted-foreground pt-4 text-xs uppercase tracking-[0.25em]">
               {t.contact.location}
             </p>

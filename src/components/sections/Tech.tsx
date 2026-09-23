@@ -1,5 +1,17 @@
+import { useEffect, useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi,
+} from "@/components/ui/carousel";
+
+// Intervallo dello scorrimento automatico: lento e non invasivo
+const AUTOPLAY_MS = 3200;
 
 const techs = [
   { name: "HTML5", svg: <path d="M12 2L3 4l1.5 17L12 23l7.5-2L21 4 12 2zm5.5 6H8.7l.2 2.4h8.4l-.6 7.1L12 19l-4.7-1.5-.3-3.2h2.3l.2 1.6 2.5.7 2.5-.7.3-3.2H7l-.6-6.7h11.4l-.3 2z" /> },
@@ -23,37 +35,85 @@ const techs = [
 export const Tech = () => {
   const ref = useReveal<HTMLDivElement>();
   const { t } = useI18n();
+  const [api, setApi] = useState<CarouselApi>();
+  const [hovered, setHovered] = useState(false);
+  const [dragging, setDragging] = useState(false);
+  const paused = hovered || dragging;
+
+  // Durante swipe/drag manuale lo scorrimento automatico si ferma
+  useEffect(() => {
+    if (!api) return;
+    const onDown = () => setDragging(true);
+    const onUp = () => setDragging(false);
+    api.on("pointerDown", onDown);
+    api.on("pointerUp", onUp);
+    return () => {
+      api.off("pointerDown", onDown);
+      api.off("pointerUp", onUp);
+    };
+  }, [api]);
+
+  useEffect(() => {
+    if (!api || paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = window.setInterval(() => api.scrollNext(), AUTOPLAY_MS);
+    return () => window.clearInterval(id);
+  }, [api, paused]);
+
+  const navButton =
+    "static translate-x-0 translate-y-0 h-10 w-10 rounded-full border-border bg-transparent text-muted-foreground hover:bg-transparent hover:border-vesuvio hover:text-vesuvio transition-colors";
+
   return (
-    <section id="tech" className="py-32 md:py-48 container mx-auto">
-      <div ref={ref} className="reveal text-center max-w-2xl mx-auto mb-16">
-        <p className="section-label mb-6">{t.tech.label}</p>
-        <h2 className="font-display text-4xl md:text-6xl leading-[1.05] text-balance">
-          {t.tech.titleStart} <span className="italic text-vesuvio">{t.tech.titleHighlight}</span>{t.tech.titleEnd}
-        </h2>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-border max-w-5xl mx-auto border border-border">
-        {techs.map((t, i) => (
-          <TechItem key={t.name} {...t} index={i} />
-        ))}
+    <section id="tech" className="pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden">
+      <div className="container mx-auto">
+        <div ref={ref} className="reveal flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 md:mb-12">
+          <div className="max-w-2xl">
+            <p className="section-label mb-6">
+              <span className="hairline mr-4 align-middle" /> {t.tech.label}
+            </p>
+            <h2 className="font-display text-4xl md:text-6xl leading-[1.05] text-balance">
+              {t.tech.titleStart} <span className="italic text-vesuvio">{t.tech.titleHighlight}</span>{t.tech.titleEnd}
+            </h2>
+          </div>
+        </div>
+
+        <Carousel
+          setApi={setApi}
+          opts={{ loop: true, align: "start", dragFree: true, duration: 45 }}
+          aria-label={t.tech.label}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          onFocusCapture={() => setHovered(true)}
+          onBlurCapture={() => setHovered(false)}
+        >
+          <CarouselContent>
+            {techs.map((tech) => (
+              <CarouselItem key={tech.name} className="basis-1/2 min-[480px]:basis-1/3 md:basis-1/4 lg:basis-1/6">
+                <TechItem {...tech} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="mt-8 flex items-center justify-end gap-3">
+            <CarouselPrevious className={navButton} />
+            <CarouselNext className={navButton} />
+          </div>
+        </Carousel>
       </div>
     </section>
   );
 };
 
-const TechItem = ({ name, svg, index }: { name: string; svg: React.ReactNode; index: number }) => {
-  const ref = useReveal<HTMLDivElement>();
-  return (
-    <div
-      ref={ref}
-      className="reveal group bg-background hover:bg-secondary/60 transition-colors duration-500 aspect-square flex flex-col items-center justify-center gap-4 p-8 cursor-default"
-      style={{ transitionDelay: `${index * 60}ms` }}
+const TechItem = ({ name, svg }: { name: string; svg: React.ReactNode }) => (
+  <div className="group h-32 md:h-36 border border-border bg-background hover:bg-secondary/60 transition-colors duration-500 flex flex-col items-center justify-center gap-4 px-4 cursor-grab active:cursor-grabbing select-none">
+    <svg
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      className="w-9 h-9 fill-current text-foreground/70 group-hover:text-vesuvio transition-all duration-500 group-hover:scale-110"
     >
-      <svg viewBox="0 0 24 24" className="w-10 h-10 fill-current text-foreground/70 group-hover:text-vesuvio transition-all duration-500 group-hover:scale-110">
-        {svg}
-      </svg>
-      <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground group-hover:text-foreground transition-colors">
-        {name}
-      </span>
-    </div>
-  );
-};
+      {svg}
+    </svg>
+    <span className="text-xs uppercase tracking-[0.25em] text-muted-foreground group-hover:text-foreground transition-colors text-center">
+      {name}
+    </span>
+  </div>
+);

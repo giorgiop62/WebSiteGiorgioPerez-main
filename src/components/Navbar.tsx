@@ -8,8 +8,8 @@ export const Navbar = () => {
   const { language, setLanguage, t } = useI18n();
   const links = [
     { href: "/#hero", label: t.nav.home },
+    { href: "/#progetti", label: t.nav.projects },
     { href: "/#about", label: t.nav.about },
-    { href: "/#projects", label: t.nav.projects },
     { href: "/#team", label: t.nav.team },
     { href: "/#contact", label: t.nav.contact },
   ];
@@ -28,9 +28,9 @@ export const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between">
         <a href="/#hero" className="flex items-center gap-3 group">
-          <img src={logo} alt="Ermes & Co. logo" className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-105" />
+          <img src={logo} alt="Ermes Media logo" className="w-10 h-10 object-contain transition-transform duration-500 group-hover:scale-105" />
           <span className="font-display text-lg tracking-wide hidden sm:inline">
-            Ermes &amp; Co.
+            Ermes Media
           </span>
         </a>
         <nav className="hidden md:flex items-center gap-10">

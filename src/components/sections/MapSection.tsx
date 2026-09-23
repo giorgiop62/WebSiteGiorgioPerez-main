@@ -47,7 +47,7 @@ export const MapSection = () => {
             <div className="bg-secondary/40 border border-border p-8">
               <div className="flex items-center gap-3 mb-3">
                 <MapPin className="w-5 h-5 text-vesuvio" />
-                <span className="font-display text-2xl">Ermes &amp; Co.</span>
+                <span className="font-display text-2xl">Ermes Media</span>
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <span className="font-display text-3xl text-vesuvio">5.0</span>
