@@ -23,7 +23,7 @@ export const Team = () => {
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2">
         {t.team.members.map((member, index) => (
           <TeamCard key={member.slug} member={member} index={index} discover={t.team.discover} />
         ))}
@@ -61,7 +61,7 @@ const TeamCard = ({
         <h3 className="font-display text-3xl mt-3">{member.name}</h3>
         <p className="text-sm text-muted-foreground leading-relaxed mt-4">{member.description}</p>
         <div className="flex flex-wrap gap-2 mt-6">
-          {member.skills.map((skill) => (
+          {member.skills.slice(0, 5).map((skill) => (
             <span key={skill} className="text-[11px] uppercase tracking-[0.18em] border border-border px-3 py-2 text-muted-foreground">
               {skill}
             </span>
