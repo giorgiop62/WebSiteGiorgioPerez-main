@@ -4,7 +4,7 @@ import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 
 // Scheda Google di Ermes Media (Knowledge Graph /g/11xd8f14km)
-const MAPS_URL = "https://share.google/SkEzv5OTectYinPSp";
+const MAPS_URL = "https://share.google/0mCoXZizpqh6bWbV7";
 const EMBED_URL = "https://www.google.com/maps?q=Napoli%2C%20Italia&output=embed";
 
 export const MapSection = () => {
