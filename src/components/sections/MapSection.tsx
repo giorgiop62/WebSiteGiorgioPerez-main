@@ -5,7 +5,8 @@ import { useI18n } from "@/lib/i18n";
 
 // Scheda Google di Ermes Media (Knowledge Graph /g/11xd8f14km)
 const MAPS_URL = "https://share.google/0mCoXZizpqh6bWbV7";
-const EMBED_URL = "https://www.google.com/maps?q=Napoli%2C%20Italia&output=embed";
+const EMBED_URL =
+  "https://www.google.com/maps?q=Via%20Santa%20Maria%20Antesaecula%2C%20112%2C%2080137%20Napoli%20NA&z=17&output=embed";
 
 export const MapSection = () => {
   const ref = useReveal<HTMLDivElement>();

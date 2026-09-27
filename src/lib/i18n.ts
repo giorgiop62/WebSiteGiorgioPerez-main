@@ -364,7 +364,7 @@ export const translations = {
         "Raccontaci cosa hai in mente. Partiamo dalle tue esigenze e costruiamo insieme la soluzione piu adatta.",
       email: "Email",
       phone: "Telefono",
-      location: "Napoli, Italia",
+      location: "Via Santa Maria Antesaecula, 112 — 80137 Napoli",
       fields: {
         name: "Nome",
         email: "Email",
@@ -865,7 +865,7 @@ A presto!`,
         "Tell us what you have in mind. We start from your needs and build the right solution together.",
       email: "Email",
       phone: "Phone",
-      location: "Naples, Italy",
+      location: "Via Santa Maria Antesaecula, 112 — 80137 Naples, Italy",
       fields: {
         name: "Name",
         email: "Email",
