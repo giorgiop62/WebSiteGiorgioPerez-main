@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import MemberProfile from "./pages/MemberProfile.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CookiePolicy from "./pages/CookiePolicy.tsx";
+import LegalPage from "./pages/LegalPage.tsx";
 import { CookieBanner } from "@/components/CookieBanner";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,8 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/team/:slug" element={<MemberProfile />} />
             <Route path="/cookie-policy" element={<CookiePolicy />} />
+            <Route path="/privacy" element={<LegalPage doc="privacy" />} />
+            <Route path="/terms" element={<LegalPage doc="terms" />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>

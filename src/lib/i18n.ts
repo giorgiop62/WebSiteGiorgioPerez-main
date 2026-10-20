@@ -515,6 +515,116 @@ A presto!`,
         ],
       },
     },
+    legal: {
+      footer: {
+        privacy: "Privacy policy",
+        terms: "Termini di servizio",
+      },
+      back: "Torna alla Home",
+      privacy: {
+        label: "Informativa",
+        title: "Privacy Policy",
+        updated: "Ultimo aggiornamento: 20 ottobre 2026",
+        sections: [
+          {
+            title: "Titolare del trattamento",
+            body: [
+              "Il titolare del trattamento è Ermes Media, Via Santa Maria Antesaecula, 112 — 80137 Napoli (Italia). Per qualsiasi richiesta sui tuoi dati puoi scrivere a info@ermesmedia.com.",
+              "Questa informativa riguarda l'assistente virtuale WhatsApp di Ermes Media. Per il sito web vale la Cookie Policy.",
+            ],
+          },
+          {
+            title: "Quali dati trattiamo",
+            body: [
+              "Quando scrivi al nostro numero WhatsApp di assistenza trattiamo il tuo numero di telefono, il nome del profilo WhatsApp, il testo dei messaggi che ci invii, la data e l'ora dei messaggi e i dati tecnici necessari a recapitarli.",
+              "Ti chiediamo di non inviare dati particolari (ad esempio sulla salute) o dati di altre persone: non servono per rispondere alle tue richieste.",
+            ],
+          },
+          {
+            title: "Perché li trattiamo",
+            body: [
+              "Usiamo i tuoi messaggi solo per risponderti: informazioni sui nostri servizi, richieste di preventivo e contatti con il team. Le risposte sono generate automaticamente da un sistema di intelligenza artificiale.",
+              "La base giuridica è l'esecuzione di misure precontrattuali adottate su tua richiesta (art. 6.1.b GDPR) e il nostro legittimo interesse a rispondere a chi ci contatta (art. 6.1.f GDPR). Non usiamo i tuoi dati per marketing, profilazione o decisioni automatizzate con effetti giuridici su di te.",
+            ],
+          },
+          {
+            title: "Chi tratta i dati per nostro conto",
+            body: [
+              "WhatsApp Business Platform — Meta Platforms Ireland Limited: riceve e recapita i messaggi tra te e il nostro numero.",
+              "n8n Cloud — n8n GmbH (Germania, UE): esegue l'automazione che riceve il messaggio, lo passa all'intelligenza artificiale e invia la risposta.",
+              "Claude — Anthropic (Anthropic Ireland Limited / Anthropic PBC, USA): genera il testo della risposta a partire dal tuo messaggio. Anthropic non usa i dati ricevuti tramite le sue API per addestrare i propri modelli.",
+              "Alcuni di questi fornitori possono trattare i dati anche fuori dall'Unione europea, in particolare negli Stati Uniti. In questi casi il trasferimento avviene sulla base del Data Privacy Framework UE-USA o delle clausole contrattuali standard approvate dalla Commissione europea.",
+            ],
+          },
+          {
+            title: "Per quanto tempo li conserviamo",
+            body: [
+              "Il bot non salva la cronologia delle conversazioni in un database e non ha memoria delle chat precedenti.",
+              "I registri tecnici delle esecuzioni su n8n, che contengono il testo del messaggio e il numero, vengono cancellati automaticamente entro 30 giorni. Anthropic conserva i dati delle richieste per un massimo di 30 giorni a fini di sicurezza, salvo obblighi di legge. Meta conserva i messaggi secondo le condizioni della WhatsApp Business Platform.",
+              "La conversazione resta visibile nella tua app WhatsApp e nell'account WhatsApp Business di Ermes Media finché non viene eliminata.",
+            ],
+          },
+          {
+            title: "I tuoi diritti",
+            body: [
+              "In base agli artt. 15-22 del Regolamento UE 2016/679 (GDPR) puoi chiedere in qualsiasi momento l'accesso ai tuoi dati, la rettifica, la cancellazione, la limitazione del trattamento, la portabilità, e puoi opporti al trattamento.",
+              "Per esercitarli, o per chiedere la cancellazione dei tuoi dati, scrivi a info@ermesmedia.com indicando il numero di telefono con cui ci hai scritto. Ti rispondiamo entro 30 giorni.",
+              "Puoi anche smettere di usare il servizio in qualsiasi momento: basta non scriverci più o bloccare il nostro numero su WhatsApp.",
+              "Hai inoltre il diritto di proporre reclamo al Garante per la protezione dei dati personali (garanteprivacy.it).",
+            ],
+          },
+        ],
+      },
+      terms: {
+        label: "Condizioni",
+        title: "Termini di servizio",
+        updated: "Ultimo aggiornamento: 20 ottobre 2026",
+        sections: [
+          {
+            title: "Il servizio",
+            body: [
+              "Ermes Media (Via Santa Maria Antesaecula, 112 — 80137 Napoli) mette a disposizione un assistente virtuale su WhatsApp che risponde a domande sui nostri servizi, raccoglie richieste di preventivo e ti mette in contatto con il team.",
+              "Il servizio è gratuito. Scrivendo al nostro numero WhatsApp accetti questi termini.",
+            ],
+          },
+          {
+            title: "Risposte generate da un'intelligenza artificiale",
+            body: [
+              "Le risposte dell'assistente sono generate automaticamente da un sistema di intelligenza artificiale (Claude, di Anthropic) e non sono scritte da una persona.",
+              "Le risposte possono contenere errori, imprecisioni o informazioni non aggiornate. Hanno valore solo informativo: prezzi, tempi e condizioni sono vincolanti solo quando confermati per iscritto dal team di Ermes Media, ad esempio in un preventivo firmato.",
+              "Se vuoi parlare con una persona, chiedilo nella chat oppure scrivi a info@ermesmedia.com.",
+            ],
+          },
+          {
+            title: "Uso corretto",
+            body: [
+              "Ti chiediamo di usare il servizio solo per comunicare con Ermes Media. Non è consentito inviare contenuti illeciti, offensivi o spam, né tentare di aggirare o manomettere il funzionamento dell'assistente.",
+              "Possiamo limitare o interrompere il servizio per chi non rispetta queste regole.",
+            ],
+          },
+          {
+            title: "Disponibilità e responsabilità",
+            body: [
+              "Il servizio dipende da piattaforme di terze parti (WhatsApp, n8n, Anthropic) e può essere interrotto, modificato o sospeso in qualsiasi momento, anche senza preavviso.",
+              "Nei limiti consentiti dalla legge, Ermes Media non risponde di danni derivanti dall'uso delle risposte automatiche o dall'indisponibilità del servizio.",
+            ],
+          },
+          {
+            title: "Dati personali",
+            body: [
+              "Il trattamento dei dati che ci invii tramite WhatsApp è descritto nella Privacy Policy.",
+            ],
+          },
+          {
+            title: "Modifiche e legge applicabile",
+            body: [
+              "Possiamo aggiornare questi termini: la data in alto indica l'ultima versione. Questi termini sono regolati dalla legge italiana; restano salvi i diritti inderogabili previsti per i consumatori.",
+              "Per qualsiasi domanda scrivi a info@ermesmedia.com.",
+            ],
+          },
+        ],
+      },
+    },
   },
   en: {
     nav: {
@@ -1011,6 +1121,116 @@ Talk soon!`,
             title: "Your rights",
             body: [
               "Under articles 15-22 of EU Regulation 2016/679 (GDPR) you can request access, rectification, erasure, restriction of processing and object to it, by writing to info@ermesmedia.com. You also have the right to lodge a complaint with the Italian Data Protection Authority (garanteprivacy.it).",
+            ],
+          },
+        ],
+      },
+    },
+    legal: {
+      footer: {
+        privacy: "Privacy policy",
+        terms: "Terms of service",
+      },
+      back: "Back to Home",
+      privacy: {
+        label: "Notice",
+        title: "Privacy Policy",
+        updated: "Last updated: 20 October 2026",
+        sections: [
+          {
+            title: "Data controller",
+            body: [
+              "The data controller is Ermes Media, Via Santa Maria Antesaecula, 112 — 80137 Naples (Italy). For any request about your data you can write to info@ermesmedia.com.",
+              "This policy covers the Ermes Media WhatsApp virtual assistant. For the website, see the Cookie Policy.",
+            ],
+          },
+          {
+            title: "What data we process",
+            body: [
+              "When you write to our WhatsApp support number we process your phone number, your WhatsApp profile name, the text of the messages you send us, the date and time of the messages and the technical data needed to deliver them.",
+              "Please don't send special categories of data (for example about your health) or other people's data: we don't need them to answer your requests.",
+            ],
+          },
+          {
+            title: "Why we process it",
+            body: [
+              "We use your messages only to reply to you: information about our services, quote requests and putting you in touch with the team. Replies are generated automatically by an artificial intelligence system.",
+              "The legal basis is taking steps at your request prior to entering into a contract (art. 6.1.b GDPR) and our legitimate interest in replying to people who contact us (art. 6.1.f GDPR). We don't use your data for marketing, profiling or automated decisions with legal effects on you.",
+            ],
+          },
+          {
+            title: "Who processes the data on our behalf",
+            body: [
+              "WhatsApp Business Platform — Meta Platforms Ireland Limited: receives and delivers the messages between you and our number.",
+              "n8n Cloud — n8n GmbH (Germany, EU): runs the automation that receives your message, passes it to the AI and sends the reply.",
+              "Claude — Anthropic (Anthropic Ireland Limited / Anthropic PBC, USA): generates the reply text from your message. Anthropic does not use data received through its API to train its models.",
+              "Some of these providers may process data outside the European Union, in particular in the United States. In those cases the transfer relies on the EU-US Data Privacy Framework or on the standard contractual clauses approved by the European Commission.",
+            ],
+          },
+          {
+            title: "How long we keep it",
+            body: [
+              "The bot does not store conversation history in a database and has no memory of previous chats.",
+              "Technical execution logs on n8n, which contain the message text and the phone number, are deleted automatically within 30 days. Anthropic keeps request data for up to 30 days for safety purposes, unless required by law. Meta keeps messages according to the WhatsApp Business Platform terms.",
+              "The conversation stays visible in your WhatsApp app and in the Ermes Media WhatsApp Business account until it is deleted.",
+            ],
+          },
+          {
+            title: "Your rights",
+            body: [
+              "Under articles 15-22 of EU Regulation 2016/679 (GDPR) you can at any time request access to your data, rectification, erasure, restriction of processing and portability, and you can object to the processing.",
+              "To exercise them, or to ask us to delete your data, write to info@ermesmedia.com stating the phone number you used to contact us. We reply within 30 days.",
+              "You can also stop using the service at any time: just stop writing to us or block our number on WhatsApp.",
+              "You also have the right to lodge a complaint with the Italian Data Protection Authority (garanteprivacy.it).",
+            ],
+          },
+        ],
+      },
+      terms: {
+        label: "Terms",
+        title: "Terms of Service",
+        updated: "Last updated: 20 October 2026",
+        sections: [
+          {
+            title: "The service",
+            body: [
+              "Ermes Media (Via Santa Maria Antesaecula, 112 — 80137 Naples, Italy) provides a WhatsApp virtual assistant that answers questions about our services, collects quote requests and puts you in touch with the team.",
+              "The service is free. By writing to our WhatsApp number you accept these terms.",
+            ],
+          },
+          {
+            title: "Replies generated by artificial intelligence",
+            body: [
+              "The assistant's replies are generated automatically by an artificial intelligence system (Claude, by Anthropic) and are not written by a person.",
+              "Replies may contain errors, inaccuracies or outdated information. They are for information only: prices, timelines and conditions are binding only once confirmed in writing by the Ermes Media team, for example in a signed quote.",
+              "If you want to talk to a person, ask in the chat or write to info@ermesmedia.com.",
+            ],
+          },
+          {
+            title: "Acceptable use",
+            body: [
+              "Please use the service only to communicate with Ermes Media. You may not send unlawful, offensive or spam content, or try to bypass or tamper with the assistant.",
+              "We may limit or stop the service for anyone who doesn't follow these rules.",
+            ],
+          },
+          {
+            title: "Availability and liability",
+            body: [
+              "The service relies on third-party platforms (WhatsApp, n8n, Anthropic) and may be interrupted, changed or suspended at any time, including without notice.",
+              "To the extent permitted by law, Ermes Media is not liable for damages arising from the use of automated replies or from the service being unavailable.",
+            ],
+          },
+          {
+            title: "Personal data",
+            body: [
+              "How we process the data you send us via WhatsApp is described in the Privacy Policy.",
+            ],
+          },
+          {
+            title: "Changes and governing law",
+            body: [
+              "We may update these terms: the date at the top shows the latest version. These terms are governed by Italian law, without prejudice to the mandatory rights granted to consumers.",
+              "For any questions write to info@ermesmedia.com.",
             ],
           },
         ],

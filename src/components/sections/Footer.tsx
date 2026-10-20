@@ -46,6 +46,8 @@ export const Footer = () => {
         <div className="flex flex-wrap gap-x-4 gap-y-1">
           <p>© {new Date().getFullYear()} Ermes Media — {t.footer.rights}</p>
           <Link to="/cookie-policy" className="hover:text-vesuvio transition-colors">{t.cookies.footer.policy}</Link>
+          <Link to="/privacy" className="hover:text-vesuvio transition-colors">{t.legal.footer.privacy}</Link>
+          <Link to="/terms" className="hover:text-vesuvio transition-colors">{t.legal.footer.terms}</Link>
           <button type="button" onClick={openCookiePreferences} className="hover:text-vesuvio transition-colors">
             {t.cookies.footer.preferences}
           </button>

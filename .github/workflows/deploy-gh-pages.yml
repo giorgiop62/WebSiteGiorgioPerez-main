@@ -37,6 +37,12 @@ jobs:
         run: echo 'www.ermesmedia.com' > ./dist/CNAME
       - name: SPA fallback for direct links (e.g. /cookie-policy)
         run: cp ./dist/index.html ./dist/404.html
+      - name: Static entry points for legal pages (HTTP 200 for Meta's URL check)
+        run: |
+          for page in privacy terms cookie-policy; do
+            mkdir -p ./dist/$page
+            cp ./dist/index.html ./dist/$page/index.html
+          done
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
