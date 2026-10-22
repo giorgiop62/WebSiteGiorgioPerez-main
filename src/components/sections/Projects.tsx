@@ -1,6 +1,4 @@
-import p1 from "@/assets/project-1.webp";
 import p2 from "@/assets/project-2.webp";
-import p3 from "@/assets/project-3.webp";
 import p4 from "@/assets/project-4.webp";
 import p5 from "@/assets/project-5.webp";
 import p6 from "@/assets/project-6.webp";
@@ -12,8 +10,6 @@ import { useI18n } from "@/lib/i18n";
 
 // Dimensioni reali degli screenshot: servono per width/height (niente layout shift)
 const projectImages = [
-  { src: p1, width: 1200, height: 603 },
-  { src: p3, width: 1200, height: 602 },
   { src: p5, width: 1200, height: 601 },
   { src: p2, width: 1200, height: 603 },
   { src: p4, width: 1200, height: 557 },

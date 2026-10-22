@@ -64,18 +64,6 @@ export const translations = {
         "Ogni lavoro nasce da un dialogo: con il cliente, con il contesto, con la materia digitale.",
       items: [
         {
-          title: "andreanimanola.com",
-          desc: "E-commerce artistico per la vendita di quadri, con focus su UX e conversioni.",
-          tech: "WordPress · WooCommerce",
-          href: "https://andreanimanola.com",
-        },
-        {
-          title: "jurgen-confrontaofferte.it",
-          desc: "Sito WordPress con form avanzati per la generazione e gestione dei clienti.",
-          tech: "WordPress · Form · Lead Generation",
-          href: "https://jurgen-confrontaofferte.it",
-        },
-        {
           title: "lorenzosalvaticoach.it",
           desc: "Sito vetrina sviluppato in React con form interattivo per profilare e acquisire nuovi utenti.",
           tech: "React · UX · Form",
@@ -686,18 +674,6 @@ A presto!`,
       intro:
         "Every project starts with a conversation: with the client, the context, and the digital material itself.",
       items: [
-        {
-          title: "andreanimanola.com",
-          desc: "Art e-commerce for selling paintings, focused on UX and conversions.",
-          tech: "WordPress · WooCommerce",
-          href: "https://andreanimanola.com",
-        },
-        {
-          title: "jurgen-confrontaofferte.it",
-          desc: "WordPress website with advanced forms for lead generation and customer management.",
-          tech: "WordPress · Forms · Lead Generation",
-          href: "https://jurgen-confrontaofferte.it",
-        },
         {
           title: "lorenzosalvaticoach.it",
           desc: "React showcase website with an interactive form to profile and acquire new users.",
