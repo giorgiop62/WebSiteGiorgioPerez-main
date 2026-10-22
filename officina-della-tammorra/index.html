@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="it" data-lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Officina della Tammorra</title>
+<meta name="description" content="Officina della Tammorra – i suoni di una volta. Tammorre, tamburelli e strumenti della tradizione popolare napoletana, costruiti e dipinti a mano. Vico San Severino 39, Napoli.">
+<style>
+  :root {
+    --crema: #FFFFE3;
+    --arancio: #FF9900;
+    --arancio-scuro: #F08A00;
+    --marrone: #603813;
+    --marrone-chiaro: #8a5a2b;
+    --grigio: #D3D3D3;
+    --bianco: #fffdf4;
+    --verde-wa: #25D366;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--crema) url(img/pattern.jpg) repeat;
+    color: var(--marrone);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+  }
+  a { color: var(--marrone); }
+  img { max-width: 100%; display: block; }
+
+  /* ---------- Lingua ---------- */
+  html[data-lang="it"] [lang="en"],
+  html[data-lang="en"] [lang="it"] { display: none !important; }
+
+  .pagina {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--bianco);
+    border-bottom: 4px solid var(--arancio);
+    box-shadow: 0 0 24px rgba(96, 56, 19, .18);
+  }
+
+  /* ---------- Testata ---------- */
+  .titolo {
+    position: relative;
+    background: var(--crema) url(img/pattern.jpg) repeat;
+    border-bottom: 4px solid var(--arancio);
+    padding: 28px 24px 20px;
+    text-align: center;
+  }
+  .titolo img {
+    margin: 0 auto;
+    width: 560px;
+    height: auto;
+  }
+  .lingue {
+    position: absolute;
+    top: 10px; right: 12px;
+    display: flex; gap: 6px;
+  }
+  .lingue button {
+    font: bold .85rem Arial, Helvetica, sans-serif;
+    color: var(--marrone);
+    background: var(--crema);
+    border: 2px solid var(--marrone);
+    border-radius: 10px;
+    padding: 2px 9px;
+    cursor: pointer;
+  }
+  .lingue button[aria-pressed="true"] { background: var(--arancio); }
+
+  /* ---------- Layout ---------- */
+  .corpo { display: flex; align-items: stretch; }
+
+  .colonna-menu {
+    flex: 0 0 180px;
+    background: var(--arancio) url(img/menu-bg.jpg) repeat-y left top;
+    background-size: 100% auto;
+    padding: 20px 14px;
+  }
+  .colonna-menu nav { position: sticky; top: 16px; }
+  .colonna-menu ul { list-style: none; margin: 0; padding: 0; }
+  .colonna-menu li { margin-bottom: 10px; }
+  .colonna-menu a {
+    display: block;
+    padding: 6px 10px;
+    background: var(--crema);
+    border: 2px solid var(--marrone);
+    border-radius: 14px;
+    color: var(--marrone);
+    font-size: 1.05rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 2px 2px 0 var(--marrone);
+    transition: transform .15s, box-shadow .15s, background .15s;
+  }
+  .colonna-menu a:hover,
+  .colonna-menu a:focus-visible {
+    background: #fff;
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--marrone);
+  }
+
+  main { flex: 1; min-width: 0; padding: 28px 32px 40px; }
+
+  section { padding: 8px 0 28px; border-bottom: 2px dashed var(--grigio); margin-bottom: 28px; scroll-margin-top: 12px; }
+  section:last-child { border-bottom: 0; margin-bottom: 0; }
+
+  h2 {
+    margin: 0 0 14px;
+    font-size: 1.7rem;
+    font-style: italic;
+    color: var(--marrone);
+    border-left: 8px solid var(--arancio);
+    padding-left: 12px;
+  }
+  h3 { color: var(--marrone); margin: 0 0 6px; font-size: 1.1rem; }
+  h4 { color: var(--arancio-scuro); margin: 22px 0 8px; font-size: 1.15rem; font-style: italic; }
+  p { margin: 0 0 12px; }
+  .motto { color: var(--arancio-scuro); font-style: italic; font-weight: bold; }
+  .intro { font-size: 1.05rem; font-style: italic; }
+
+  /* ---------- Benvenuto ---------- */
+  .benvenuto {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+  .benvenuto img {
+    border-radius: 50%;
+    border: 6px solid var(--arancio);
+    aspect-ratio: 1;
+    object-fit: cover;
+  }
+
+  /* ---------- Foto ---------- */
+  .foto {
+    margin: 0;
+    background: #fff;
+    padding: 8px 8px 10px;
+    border: 1px solid var(--grigio);
+    box-shadow: 2px 3px 8px rgba(96, 56, 19, .15);
+  }
+  .foto img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; cursor: zoom-in; }
+  .foto figcaption { font-size: .9rem; text-align: center; padding-top: 6px; color: var(--marrone-chiaro); }
+
+  .griglia {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+  }
+
+  .due-colonne {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .riquadro {
+    background: var(--crema);
+    border: 2px solid var(--arancio);
+    border-radius: 10px;
+    padding: 16px 18px;
+  }
+  .riquadro + .riquadro { margin-top: 14px; }
+
+  /* ---------- Strumenti ---------- */
+  .strumento {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    align-items: start;
+    margin-bottom: 22px;
+  }
+  .strumento.senza-foto { grid-template-columns: 1fr; }
+  .strumento h3 { font-size: 1.25rem; }
+
+  blockquote {
+    margin: 0 0 16px;
+    padding: 14px 18px;
+    background: var(--crema);
+    border-left: 6px solid var(--arancio);
+    font-style: italic;
+  }
+  blockquote cite { display: block; margin-top: 6px; font-style: normal; font-size: .9rem; color: var(--marrone-chiaro); }
+  .stelle { color: var(--arancio-scuro); font-style: normal; letter-spacing: 2px; }
+
+  /* ---------- Pulsanti ---------- */
+  .pulsante {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 8px 16px;
+    background: var(--arancio);
+    border: 2px solid var(--marrone);
+    border-radius: 14px;
+    color: var(--marrone);
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 2px 2px 0 var(--marrone);
+    margin: 4px 6px 4px 0;
+  }
+  .pulsante:hover { background: #ffb040; }
+  .pulsante svg { width: 20px; height: 20px; flex: none; }
+
+  /* ---------- Video e mappa ---------- */
+  .incorniciato {
+    position: relative;
+    width: 100%;
+    border: 6px solid var(--arancio);
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+  }
+  .incorniciato.video { aspect-ratio: 16 / 9; }
+  .incorniciato.mappa { aspect-ratio: 4 / 3; background: var(--crema); }
+  .incorniciato iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+  .contatti-lista { list-style: none; padding: 0; margin: 0; }
+  .contatti-lista li { margin-bottom: 8px; }
+
+  /* ---------- Piè di pagina ---------- */
+  footer {
+    background: var(--arancio) url(img/menu-bg.jpg) repeat;
+    color: var(--marrone);
+    text-align: center;
+    padding: 14px 16px;
+    font-size: .9rem;
+    font-weight: bold;
+  }
+
+  /* ---------- Pulsanti fissi ---------- */
+  .fisso {
+    position: fixed;
+    bottom: 18px;
+    width: 54px; height: 54px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, .3);
+    z-index: 9;
+    border: 0;
+    cursor: pointer;
+  }
+  .fisso svg { width: 28px; height: 28px; }
+  .whatsapp-fisso { right: 18px; background: var(--verde-wa); color: #fff; }
+  .musica-fisso { left: 18px; background: var(--arancio); color: var(--marrone); border: 3px solid var(--marrone); }
+  .musica-fisso[hidden] { display: none; }
+  .musica-fisso .off { display: none; }
+  .musica-fisso[aria-pressed="false"] .on { display: none; }
+  .musica-fisso[aria-pressed="false"] .off { display: block; }
+
+  /* ---------- Lightbox ---------- */
+  .lightbox {
+    position: fixed; inset: 0;
+    background: rgba(40, 22, 6, .88);
+    display: none; align-items: center; justify-content: center;
+    padding: 24px; z-index: 10; cursor: zoom-out;
+  }
+  .lightbox.aperta { display: flex; }
+  .lightbox img { max-height: 90vh; border: 6px solid var(--crema); }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 760px) {
+    .titolo { padding: 40px 16px 14px; }
+    .corpo { flex-direction: column; }
+    .colonna-menu { flex: none; padding: 10px 16px; background-size: cover; }
+    .colonna-menu nav { position: static; }
+    .colonna-menu ul { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+    .colonna-menu li { margin: 0; }
+    .colonna-menu a { font-size: .9rem; padding: 4px 10px; }
+    main { padding: 20px 16px 80px; }
+    .benvenuto, .due-colonne, .strumento { grid-template-columns: 1fr; }
+    .benvenuto img { max-width: 320px; margin: 0 auto; }
+    .strumento .foto { max-width: 260px; }
+    .griglia { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="pagina">
+  <header class="titolo">
+    <div class="lingue" role="group" aria-label="Lingua / Language">
+      <button type="button" data-imposta-lingua="it" aria-pressed="true">IT</button>
+      <button type="button" data-imposta-lingua="en" aria-pressed="false">EN</button>
+    </div>
+    <a href="#home"><img src="img/logo.gif" alt="Officina della Tammorra – i suoni di una volta" width="381" height="68"></a>
+  </header>
+
+  <div class="corpo">
+    <aside class="colonna-menu">
+      <nav aria-label="Menu">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#storia"><span lang="it">Storia</span><span lang="en">History</span></a></li>
+          <li><a href="#strumenti"><span lang="it">Strumenti</span><span lang="en">Instruments</span></a></li>
+          <li><a href="#costruzione"><span lang="it">Costruzione</span><span lang="en">Craft</span></a></li>
+          <li><a href="#dove-siamo"><span lang="it">Dove siamo</span><span lang="en">Find us</span></a></li>
+          <li><a href="#dicono-di-noi"><span lang="it">Dicono di noi</span><span lang="en">Reviews</span></a></li>
+          <li><a href="#video">Video</a></li>
+          <li><a href="#contatti"><span lang="it">Contatti</span><span lang="en">Contact</span></a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main id="home">
+      <!-- ================= HOME ================= -->
+      <section class="benvenuto">
+        <div>
+          <h2><span lang="it">Benvenuti</span><span lang="en">Welcome</span></h2>
+          <p class="motto"><span lang="it">“I suoni di una volta”</span><span lang="en">“The sounds of yesteryear”</span></p>
+          <div lang="it">
+            <p>L'Officina della Tammorra è una bottega artigiana nel cuore di Napoli, a due passi da Spaccanapoli, dove nascono tammorre, tamburelli e strumenti della tradizione popolare napoletana, costruiti e dipinti interamente a mano.</p>
+            <p>Ogni pezzo è unico: legno, pelle e sonagli si uniscono ai colori del Golfo, del Vesuvio e delle maschere della nostra terra.</p>
+          </div>
+          <div lang="en">
+            <p>Officina della Tammorra is an artisan workshop in the heart of Naples, just off Spaccanapoli, where tammorre, tambourines and the instruments of Neapolitan folk tradition are built and painted entirely by hand.</p>
+            <p>Every piece is unique: wood, skin and jingles come together with the colours of the Gulf, of Vesuvius and of the masks of our land.</p>
+          </div>
+        </div>
+        <img src="img/maschera.jpg" alt="Pulcinella / tammorra">
+      </section>
+
+      <!-- ================= STORIA ================= -->
+      <section id="storia">
+        <h2><span lang="it">Storia</span><span lang="en">History</span></h2>
+
+        <div lang="it">
+          <p class="intro">Le origini della tammorriata si perdono nella notte dei tempi; essa è senza dubbio una delle più sensuali e seducenti forme di ballo ed affonda le sue origini nelle antiche danze greche e, probabilmente, nelle antiche danze delle genti campane, come i sanniti.</p>
+          <p class="intro">Per nostra fortuna e nonostante i secoli trascorsi la tammorriata ha mantenuto i tratti fondamentali delle antiche danze, continuando a rappresentare i riti della sessualità e della fertilità connessi alla terra intesa come madre di ogni cosa e, quindi, fonte della vita.</p>
+        </div>
+        <div lang="en">
+          <p class="intro">The origins of the tammorriata are lost in the mists of time. It is without doubt one of the most sensual and seductive forms of dance, rooted in the dances of ancient Greece and, probably, in those of the ancient peoples of Campania, such as the Samnites.</p>
+          <p class="intro">Fortunately, despite the passing centuries, the tammorriata has kept the essential features of those ancient dances, still representing the rites of sexuality and fertility tied to the earth, seen as the mother of all things and therefore the source of life.</p>
+        </div>
+
+        <div class="due-colonne" style="margin-top:18px">
+          <div>
+            <h4><span lang="it">Le origini</span><span lang="en">The origins</span></h4>
+            <div lang="it">
+              <p>Nel mondo greco, la danza veniva considerata dono degli dei agli uomini e mezzo per questi di accostarsi alla divinità fino ad identificarsi con essa, unico modo per raggiungere, almeno idealmente, l'immortalità. Il dono del movimento del corpo era quasi sempre una vera e propria pantomima che rappresentava miti e celebrazioni di figure divine e mitologiche. In quel tempo i danzatori ellenici si muovevano con gesti corporei strettamente collegati alla voce ed alla musica per il raggiungimento dell'ebbrezza terrena.</p>
+            </div>
+            <div lang="en">
+              <p>In the Greek world, dance was considered a gift from the gods to mankind and a means for people to approach the divine until they became one with it – the only way to reach, at least ideally, immortality. The gift of bodily movement was almost always a true pantomime, representing myths and celebrating divine and mythological figures. Hellenic dancers moved with gestures closely bound to voice and music, seeking earthly ecstasy.</p>
+            </div>
+          </div>
+          <figure class="foto">
+            <img src="img/tarantella-dipinto.jpg" alt="Festa popolare dipinta / Painted folk festival">
+            <figcaption><span lang="it">La festa popolare, dipinta a mano</span><span lang="en">The folk festival, hand painted</span></figcaption>
+          </figure>
+        </div>
+
+        <div lang="it">
+          <p>Con la nascita del teatro greco, a partire dal V secolo avanti Cristo, queste danze furono schematizzate affinché entrassero a far parte delle sue rappresentazioni. Alcune di queste antiche danze, appartenenti o no al teatro, presentavano gesti caratteristici che si ripropongono nella figurazione tematica dell'odierno ballo su tammorra; questi sono testimoniati da citazioni letterarie, dipinti, raffigurazioni su vasi, da un'infinità di sculture e bassorilievi disseminati in vari musei del mondo.</p>
+          <p>Quelli riproposti nell'odierna danza campana sono soprattutto due: il primo è la <em>cheironomia</em>, cioè la posizione assunta dalle mani nel corso del ballo, molto importante poiché attraverso di essa si esplicitano particolari sentimenti ed emozioni; il secondo gesto è il saltare di tipo demoniaco che agita tutto il corpo. Entrambi questi movimenti erano eseguiti dai satiri, adoratori del culto di Dioniso e Cibele. La danza dei satiri descritta, probabile antenata della nostra tammorriata, si chiama <em>sìkinnis</em>, e si ballava nel <em>naos</em>, il tempio divino.</p>
+          <p>Continuando la storia delle antichissime origini del nostro ballo, possiamo ancora osservare che le danze bacchiche sostituirono, più tardi, in Grecia la sìkinnis. Queste nuove danze, sempre in onore del dio Dioniso, erano costituite dalla elevazione ritmica delle braccia, da piccoli passi e dall'agitazione di tutto il corpo. Tutti questi movimenti servivano alle baccanti ed alle sacerdotesse del dio per giungere a furore erotico.</p>
+          <p>La danza delle baccanti o menadi, cioè delle donne seguaci di Dioniso, era detta <em>turbé</em>, una danza fortemente oscena eseguita di solito durante i riti auspicanti fecondità. Nella schematizzazione della danza dionisiaca confluì anche la gestualità della pirrica greca, anch'essa presente, seppure travisata, anche in alcuni tipi di tammorriata. Le danze pirriche erano di carattere giocoso, ma anche guerresco e venivano eseguite da un'amazzone armata di lancia e di un piccolo scudo ed anche da un sileno che le protendeva la tipica pelle di daino, propria dei cultori di Dioniso. Nello stesso tempo, però, i satiri parodiavano mimicamente la mancanza di coraggio dei cultori della vita agreste ed in alcuni casi sembrano danzare in preda alla più accesa paura: cadono in ginocchio e stendono un braccio come se tentassero di allontanare un oggetto abominevole, oppure, sempre in ginocchio, poggiano la mano destra in terra e la sinistra sulla testa. Una splendida decorazione pittorica su di un vaso conservato nel Museo Archeologico Nazionale di Napoli raffigura due satiri che attorniano, danzando, un kelebe colmo di vino, inginocchiandosi e volteggiando con le gambe sino ad arrivare ad incastrarle. Tutte queste movenze satiriche sono riscontrabili in atteggiamenti coreutici della tammurriata campana.</p>
+          <p>Un'altra danza rituale greca, eseguita dai giovani durante la vendemmia e caratterizzata anch'essa da un'azione mimica, è detta <em>epilenios</em>; il suo movimento gioioso ed estatico, cadenzato dal ritmo della cetra e dal suono delicato delle tibie, si può rilevare in alcune movenze tammorrare. Con questa ritualità mimetica sono rappresentate tutte le azioni svolte dai vignaioli durante il periodo della vendemmia. Tra le danze allegre appartenenti al genere teatrale, bisogna ricordare soprattutto la <em>kordax</em>; quest'ultima appartiene al genere della commedia greca di tipo orgiastico ed è caratterizzata da movimenti eccitanti, in particolare dal movimento turpe dei fianchi.</p>
+          <p>Altro importante elemento di questo tipo di danze rituali è il luogo dove si svolgono. Per i popoli antichi era lo spazio antistante il tempio del dio, oggi, in una ideale continuità con il paganesimo, il sagrato o la piazza antistante la chiesa della Madonna o del santo.</p>
+        </div>
+        <div lang="en">
+          <p>With the birth of Greek theatre, from the 5th century BC, these dances were codified so that they could become part of its performances. Some of these ancient dances, whether theatrical or not, featured characteristic gestures that reappear in today's dance to the tammorra. They are documented in literary sources, paintings, vase decorations and countless sculptures and bas-reliefs scattered across the museums of the world.</p>
+          <p>Two of them above all survive in today's Campanian dance. The first is <em>cheironomia</em>, the position of the hands during the dance, which is very important because it expresses particular feelings and emotions; the second is a frenzied, “demonic” leap that shakes the whole body. Both movements were performed by satyrs, devotees of the cult of Dionysus and Cybele. This satyr dance, the likely ancestor of our tammorriata, was called <em>sìkinnis</em> and was danced in the <em>naos</em>, the sacred temple.</p>
+          <p>Continuing the story of our dance's ancient origins, we see that in Greece the sìkinnis was later replaced by the Bacchic dances. These new dances, still in honour of Dionysus, consisted of rhythmically raised arms, small steps and the shaking of the whole body. All of these movements helped the bacchantes and priestesses of the god reach an erotic frenzy.</p>
+          <p>The dance of the bacchantes, or maenads – the female followers of Dionysus – was called <em>turbé</em>, a strongly obscene dance usually performed during fertility rites. The gestures of the Greek pyrrhic dance also flowed into the Dionysian dance, and they too survive, albeit transformed, in some types of tammorriata. Pyrrhic dances were playful but also warlike, performed by an Amazon armed with a spear and a small shield, and by a silenus holding out to her the fawn skin typical of the followers of Dionysus. At the same time the satyrs mimed and mocked the lack of courage of country folk, at times appearing to dance in the grip of terror: they fall to their knees and stretch out an arm as if to push away something abominable, or, still kneeling, place the right hand on the ground and the left on their head. A splendid painted vase in the National Archaeological Museum of Naples shows two satyrs dancing around a <em>kelebe</em> full of wine, kneeling and twirling their legs until they interlock. All of these satyric movements can be found in the choreography of the Campanian tammurriata.</p>
+          <p>Another Greek ritual dance, performed by young people during the grape harvest and also mimetic in character, was the <em>epilenios</em>. Its joyful, ecstatic movement, marked by the rhythm of the lyre and the gentle sound of the pipes, can be recognised in some tammorra steps. Through this mimetic ritual all the tasks of the vine-growers during the harvest were represented. Among the merry theatrical dances, the <em>kordax</em> deserves special mention: it belonged to orgiastic Greek comedy and was characterised by provocative movements, especially a lewd swaying of the hips.</p>
+          <p>Another important element of these ritual dances is the place where they are held. For ancient peoples it was the space in front of the god's temple; today, in ideal continuity with paganism, it is the churchyard or the square in front of the church of the Madonna or the patron saint.</p>
+        </div>
+
+        <h4><span lang="it">Il ballo</span><span lang="en">The dance</span></h4>
+        <div lang="it">
+          <p>La tammurriata è una danza a coppia, ed esprime rappresentazioni rituali che non riguardano mai il quotidiano, quanto, piuttosto, tutto ciò che il quotidiano nega e reprime. Non deve, quindi, essere associata alla tradizionale danza d'amore, cosa che invece può rappresentare la tarantella. Il ballo <em>r' 'e campagnole</em>, ossia il ballo dei contadini, è costituito da una gestualità ritualizzata che, nel momento collettivo, assume un significato simbolico e magico. I suoi gesti possono essere spontanei, derivati da gesti che si effettuano durante il lavoro quotidiano nei campi o in casa, come setacciare la farina o spezzare i maccheroni, oppure imitazioni degli atteggiamenti degli animali come il volo degli uccelli e le gestualità tipiche dei gallinacei.</p>
+          <p>Quando la musica comincia a scandire il suo tempo, tra i potenziali ballatori, attraverso un gioco di sguardi avviene la ricerca del partner, poi l'incontro tra i due ed, infine, la formazione della coppia di ballerini. Nella prima fase del ballo sembra che i due danzatori cerchino la giusta intesa tra loro ed assaporino bene il ritmo della tammorra, sul quale poggia anche il canto, e ballando, cominciano anche a saggiare il loro rapporto con lo spazio. In questo momento di ricerca i due esprimono la loro volontà psicologica di possedere un proprio spazio entro cui agire protetti sia dalla barriera che si è venuta a creare tra la coppia sia da quella formata dagli astanti i quali, a loro volta, sono sempre dei potenziali partecipanti alla danza stessa visto che potrebbero intervenire in ogni istante. Durante l'esecuzione della tammurriata, infatti, non esistono attori e spettatori, non vi sono barriere tra i partecipanti alla festa, né esistono palcoscenici, ma si formano spontaneamente dei cerchi con tutti i presenti all'interno dei quali si fondono, in un tutt'uno, suonatori, cantatori e spettatori.</p>
+          <p>Il cerchio simboleggia la volontà umana di sfuggire il tempo canonico, si tenta, attraverso di esso, di fermarlo almeno per quel momento di festa donato alla divinità. Il duro vivere quotidiano viene così dimenticato ed esorcizzato. Il cerchio formato dagli spettatori serve a potenziare le energie umane dei partecipanti alla tammurriata; nel suo interno la danza si svolge regolarmente sempre sulla ritmica dello schioccare delle castagnette, tenute in mano un po' da tutti tra gli sguardi fissi e reciproci dei ballatori. In alcuni momenti di spontaneo eccitamento, però, la frase musicale che segue la scansione ritmica dei versi del cantatore, tende a stringere gli accenti; in questo momento uno dei due danzatori comincia ad assumere un ruolo aggressivo di evidente atteggiamento amoroso o di sfida, assecondato o scacciato dall'altro. Quest'ultimo può allora indietreggiare, perché incalzato dal compagno o dalla compagna, oppure decidere di accettare il corteggiamento o il duello.</p>
+          <p>Questa fase del ballo è la più coinvolgente e frenetica ed è chiamata <em>rotella</em> o <em>vutata</em>. La vutata è dunque il simbolo della sfida o dell'accoppiamento, ma può risultare da parte della donna un rifiuto dell'uomo che la sta corteggiando; la coppia, allora, si può spezzare ed in questo momento può entrare, per formare una nuova coppia, un altro personaggio, come nuovo potenziale corteggiatore. In questa fase si modificano anche la ritmica e la parte cantata, infatti la tammorra batte in uno, il cantante canta su una nota sola molto prolungata, o aggiunge dei versi più brevi per seguire i due danzatori che girano su loro stessi quasi incatenati. In questo momento della vutata si assiste alla totale liberazione ed allo sblocco di tutte le tensioni muscolari. Nella girata l'andamento della danza, nella maggior parte dei casi, è antiorario.</p>
+          <p>Non c'è limite di tempo alla danza se non quello di sfinire, raggiungere, con la perdita della coscienza, l'acme che dischiude nuovi orizzonti prima sconosciuti. Il ballo non è soltanto frenesia, e neanche semplice stato di ebbrezza, ma è puro invasamento divino. Non esiste scuola per imparare questo ballo, ma solo iniziazione; quando si è ragazzi si comincia a ballare con gli anziani ed allora bisogna solo seguire i passi senza prendere l'iniziativa. Seguire lo sguardo di colui che guida è importantissimo, soltanto guardandosi sempre negli occhi si può entrare perfettamente in sintonia.</p>
+        </div>
+        <div lang="en">
+          <p>The tammurriata is a couple dance expressing ritual representations that never concern everyday life but, rather, everything that everyday life denies and represses. It should not, therefore, be thought of as a traditional love dance, which the tarantella may instead be. The <em>ballo r' 'e campagnole</em> – the peasants' dance – is made of ritualised gestures that, in the collective moment, take on a symbolic and magical meaning. Its gestures may be spontaneous, drawn from everyday work in the fields or at home, such as sifting flour or breaking macaroni, or they may imitate animals, like the flight of birds or the typical movements of hens.</p>
+          <p>When the music begins to beat time, the would-be dancers look for a partner through an exchange of glances; then the two meet and the couple is formed. In the first phase the dancers seem to seek the right understanding between them and to savour the rhythm of the tammorra, on which the singing also rests; as they dance, they begin to test their relationship with the space around them. In this moment of searching they express a psychological need for a space of their own, protected both by the bond between them and by the ring of onlookers – who are themselves always potential dancers, since they may step in at any moment. In the tammurriata there are no performers and no audience, no barriers between those at the feast and no stage: circles form spontaneously, in which players, singers and onlookers merge into one.</p>
+          <p>The circle symbolises the human wish to escape ordinary time – to stop it, at least for the moment of the feast offered to the divinity. The hardships of daily life are thus forgotten and exorcised. The circle of onlookers amplifies the energy of those taking part; within it the dance flows to the clicking of the castanets, held by almost everyone, while the dancers keep their eyes fixed on one another. At moments of spontaneous excitement, however, the musical phrase that follows the singer's verses tightens its accents; one of the dancers then takes on an assertive role, plainly amorous or challenging, which the other either welcomes or rejects. The latter may step back, pressed by their partner, or decide to accept the courtship or the duel.</p>
+          <p>This most engaging and frenzied phase of the dance is called the <em>rotella</em> or <em>vutata</em>. The vutata is thus the symbol of challenge or of union, but it may also express the woman's rejection of the man courting her; the couple may then break up and another dancer may step in as a new suitor. In this phase the rhythm and singing change too: the tammorra beats on one, the singer holds a single long note or adds shorter verses to follow the two dancers, who spin around almost chained together. The vutata brings total release and the loosening of every muscular tension. In most cases the turn is anticlockwise.</p>
+          <p>The dance has no time limit other than exhaustion – reaching, with the loss of consciousness, the climax that opens up new, unknown horizons. The dance is not just frenzy, nor simple intoxication: it is pure divine possession. There is no school for learning it, only initiation; as youngsters, people begin dancing with their elders and must simply follow their steps without taking the lead. Following the gaze of whoever leads is essential: only by always looking each other in the eye can dancers be perfectly in tune.</p>
+        </div>
+
+        <h4><span lang="it">Le varianti</span><span lang="en">Local styles</span></h4>
+        <div lang="it">
+          <p>La tammorriata descritta sino ad ora ha delle caratteristiche ben precise, ma vi sono delle differenze a seconda dei luoghi dove si balla; vicino al mare ed in pianura, ad esempio, la danza è stata sempre considerata un avvicinamento sensuale ed amoroso, mentre tra le montagne la necessità di conquistare le vallate le ha conferito delle caratteristiche più dure e scattanti, quasi guerresche. La tammorriata <strong>scafatese</strong> è certamente la più ballata ed il suo fine è essenzialmente di natura sensuale; la <strong>paganese</strong> è più saltellante rispetto alla prima; i ballerini presentano minori momenti di attaccamento e la stessa vutata mantiene i ballerini distaccati. In questo tipo di tammorriata, che si può osservare a Pagani e nei paesi limitrofi, il corteggiamento sembra lasciare il posto ad una sfida tra i ballatori. Un terzo tipo di tammorriata è la <strong>giuglianese</strong>; la sua caratteristica principale è costituita dalla presenza del doppio flauto, del tamburello e dello scacciapensieri; il ritmo (il <em>sisco</em>), inoltre, è più veloce, quasi ossessivo.</p>
+          <p>L'ultimo modo di ballare che prendiamo in considerazione è quello dell'<strong>Avvocata</strong>, in onore della Madonna dell'Avvocata. La sua caratteristica fondamentale è nella presenza di un numero elevato di tammorre suonate contemporaneamente che può arrivare sino a dieci. C'è una tammorra principale che guida il tempo e, insieme alla voce, dà il numero dei colpi della vutata secondo il testo delle barzellette intonate. Qui la musica e i movimenti sono veri e propri richiami guerreschi, incitamento agli uomini nei momenti di combattimento.</p>
+        </div>
+        <div lang="en">
+          <p>The tammorriata described so far has well-defined features, but it varies from place to place. Near the sea and on the plains it has always been a sensual, amorous approach, while in the mountains the need to conquer the valleys gave it a harder, sharper, almost warlike character. The <strong>Scafati</strong> style is certainly the most widely danced and is essentially sensual; the <strong>Pagani</strong> style is bouncier, with fewer moments of closeness, and even the vutata keeps the dancers apart – here, in Pagani and nearby towns, courtship seems to give way to a contest between the dancers. A third style is the <strong>Giugliano</strong> tammorriata, distinguished by the double flute, the tambourine and the jaw harp; its rhythm (the <em>sisco</em>) is faster, almost obsessive.</p>
+          <p>The last style we consider is that of the <strong>Avvocata</strong>, in honour of the Madonna dell'Avvocata. Its key feature is the large number of tammorre played together – up to ten. A lead tammorra keeps time and, together with the voice, calls the number of beats of the vutata according to the lyrics of the <em>barzellette</em> being sung. Here the music and movements are true war cries, urging men on in moments of battle.</p>
+        </div>
+      </section>
+
+      <!-- ================= STRUMENTI ================= -->
+      <section id="strumenti">
+        <h2><span lang="it">Strumenti</span><span lang="en">Instruments</span></h2>
+
+        <div class="strumento">
+          <figure class="foto"><img src="img/tammorre-bottega.jpg" alt="Tammorre in bottega / Tammorre in the workshop"></figure>
+          <div>
+            <h3><span lang="it">La tammorra</span><span lang="en">The tammorra</span></h3>
+            <div lang="it">
+              <p>Viene detta anche <em>tammurro</em>; è un grosso tamburo a cornice con la membrana di pelle seccata di un animale (quasi sempre capra o pecora) tesa su telaio circolare di legno al quale sono fissati, a coppie, dischetti di metallo detti “cicere” oppure “cimbale”. Il suo diametro è in genere compreso tra i 35 e i 65 centimetri.</p>
+              <p>Il telaio sopra il quale è stesa la pelle viene impugnato dal basso dalla mano sinistra, mentre la destra la percuote ritmicamente. Il modo di impugnare la tammorra è importante anche da un punto di vista rituale: quando lo strumento è impugnato con la mano sinistra e percosso con la destra si dice che viene suonato nella maniera “maschile”. All'opposto, invece, si dice che viene suonato nella maniera “femminile”, e ciò perché il lato destro è identificato nelle antiche culture con l'idea dell'uomo, mentre il lato sinistro con l'idea della donna. L'inversione dell'impugnatura dello strumento indica un rovesciamento dei segni del rituale.</p>
+              <p>La tammorra accompagna sia il canto che il ballo tradizionale ed è usata da sola o con altri strumenti a percussione, quali le castagnette. La forma musicale, ad andamento essenzialmente binario, dallo strumento deriva il nome di “tammorriata” o anche di “canzone ’ncopp’ ’o tamburo”. A tale struttura ritmica corrisponde una particolare scansione metrica di sei versi di 11 sillabe, che durante il canto subisce però modifiche sia nel numero delle sillabe che nell'organizzazione.</p>
+              <p>Molto complessa è la tecnica usata per suonare questo strumento, poiché richiede qualità musicali e ritmiche non comuni accompagnate, inoltre, da una resistenza fisica notevole: lo strumento dev'essere spesso suonato per delle ore senza che il musicista possa cedere nella costanza del ritmo. Critica è, ad esempio, la posizione da tenere per equilibrare il peso dello strumento in modo da non affaticare eccessivamente il braccio. Non esiste, in proposito, una regola generale: ogni suonatore trova una sua maniera per equilibrarsi, costruendo una tecnica alla quale partecipa tutto il fisico.</p>
+              <p>La tammorra non va confusa con il tamburello napoletano, che è molto più piccolo e ha i cembali di ottone e non di latta.</p>
+            </div>
+            <div lang="en">
+              <p>Also called <em>tammurro</em>, it is a large frame drum: a dried animal skin (almost always goat or sheep) stretched over a circular wooden frame fitted with pairs of small metal discs called “cicere” or “cimbale”. Its diameter usually ranges from 35 to 65 centimetres.</p>
+              <p>The frame is held from below with the left hand while the right hand strikes the skin rhythmically. The way it is held also matters ritually: held in the left hand and struck with the right, it is said to be played the “male” way; the opposite is the “female” way, because in ancient cultures the right side was identified with man and the left with woman. Swapping hands signals a reversal of the ritual's signs.</p>
+              <p>The tammorra accompanies both traditional singing and dancing, alone or with other percussion such as castanets. The musical form, essentially in duple time, takes its name from the instrument – “tammorriata”, or “song on the drum”. This rhythm matches a particular metre of six eleven-syllable lines, which is however varied in syllable count and arrangement during the song.</p>
+              <p>Playing technique is very demanding: it requires uncommon musical and rhythmic skill as well as great stamina, since the instrument is often played for hours without the player ever losing a steady beat. Balancing the drum's weight so as not to tire the arm is crucial. There is no general rule: each player finds their own balance, developing a technique that involves the whole body.</p>
+              <p>The tammorra should not be confused with the Neapolitan tamburello, which is much smaller and has brass rather than tin jingles.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="strumento">
+          <figure class="foto"><img src="img/strumento-legno.jpg" alt="Triccabballacche"></figure>
+          <div>
+            <h3><span lang="it">Il triccabballacche</span><span lang="en">The triccabballacche</span></h3>
+            <div lang="it">
+              <p>È composto da tre martelletti di legno fissati in basso in una base anch'essa di legno. Il martello centrale è fisso, mentre quelli laterali sono mobili ed incernierati alla base.</p>
+              <p>Lo strumento è suonato impugnando nelle due mani i martelli laterali mobili e battendoli ritmicamente contro quello centrale fisso.</p>
+            </div>
+            <div lang="en">
+              <p>It is made of three small wooden hammers fixed at the bottom to a wooden base. The central hammer is fixed, while the two side ones are hinged to the base and move freely.</p>
+              <p>It is played by holding the two movable side hammers and striking them rhythmically against the fixed central one.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="strumento senza-foto riquadro">
+          <div>
+            <h3><span lang="it">Le castagnette</span><span lang="en">The castagnette</span></h3>
+            <div lang="it">
+              <p>Sono più conosciute con il nome di nacchere e costituiscono uno strumento ritmico formato da una coppia di piccoli elementi di legno tra loro simmetrici ed a forma di conchiglia, tenuti assieme da una cordicella. Chiusi, assumono la forma di una castagna da cui derivano, appunto, il nome.</p>
+              <p>Lo strumento è suonato da coloro che ballano la tammorriata ed anche per esse si distingue tra una castagnetta “maschio”, impugnata nella mano destra, e “femmina”, impugnata nella sinistra.</p>
+            </div>
+            <div lang="en">
+              <p>Better known as castanets, they are a rhythm instrument made of a pair of small, symmetrical, shell-shaped pieces of wood tied together with a cord. When closed they look like a chestnut (<em>castagna</em>), hence the name.</p>
+              <p>They are played by the tammorriata dancers themselves, and here too there is a “male” castanet held in the right hand and a “female” one in the left.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="strumento">
+          <figure class="foto"><img src="img/putipu.jpg" alt="Putipù"></figure>
+          <div>
+            <h3><span lang="it">Il putipù</span><span lang="en">The putipù</span></h3>
+            <div lang="it">
+              <p>È sicuramente lo strumento tradizionale napoletano più originale e divertente, in quanto produce un suono che ha il sapore di irriverenza.</p>
+              <p>Detto anche “caccavella”, è composto da una pentola di terracotta o da una vecchia scatola di latta tonda ricoperta da un lato di una pelle. Al centro di quest'ultima è legata l'estremità di una canna. Il suono è prodotto inumidendo la mano e facendola scorrere lungo la canna: lo sfregamento produce delle vibrazioni nella pelle che vengono amplificate nella sottostante pentola o scatola, che funge da cassa armonica.</p>
+            </div>
+            <div lang="en">
+              <p>Surely the most original and amusing Neapolitan folk instrument, with a sound that has a cheeky, irreverent flavour.</p>
+              <p>Also called “caccavella”, it is made of a terracotta pot or an old round tin covered on one side with skin, to whose centre the end of a reed is tied. It is played by wetting the hand and sliding it along the reed: the friction makes the skin vibrate, and the pot or tin below amplifies the sound like a soundbox.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= COSTRUZIONE ================= -->
+      <section id="costruzione">
+        <h2><span lang="it">Costruzione</span><span lang="en">How we make them</span></h2>
+        <div class="due-colonne">
+          <figure class="foto">
+            <img src="img/artigiana.jpg" alt="In bottega / In the workshop">
+            <figcaption><span lang="it">In bottega, tra le tammorre</span><span lang="en">In the workshop, among the tammorre</span></figcaption>
+          </figure>
+          <div>
+            <div class="riquadro">
+              <h3><span lang="it">Il legno</span><span lang="en">The wood</span></h3>
+              <p lang="it">Il cerchio viene curvato e rifinito a mano, poi forato per accogliere i sonagli.</p>
+              <p lang="en">The frame is bent and finished by hand, then drilled to hold the jingles.</p>
+            </div>
+            <div class="riquadro">
+              <h3><span lang="it">La pelle</span><span lang="en">The skin</span></h3>
+              <p lang="it">La pelle naturale viene tesa sul cerchio per ottenere il suono pieno e profondo della tammorra.</p>
+              <p lang="en">Natural skin is stretched over the frame to give the tammorra its full, deep sound.</p>
+            </div>
+            <div class="riquadro">
+              <h3><span lang="it">I sonagli e la pittura</span><span lang="en">Jingles and painting</span></h3>
+              <p lang="it">Le cicere di latta danno la voce allo strumento; la pittura a mano gli dà l'anima.</p>
+              <p lang="en">The tin “cicere” give the instrument its voice; hand painting gives it its soul.</p>
+            </div>
+          </div>
+        </div>
+
+        <h4><span lang="it">Artigianato e pittura</span><span lang="en">Crafts and painting</span></h4>
+        <p lang="it">Oltre agli strumenti, dipingiamo a mano tammorre decorative, orecchini e oggetti ispirati a Napoli e alle sue figure.</p>
+        <p lang="en">Besides instruments, we hand-paint decorative tammorre, earrings and objects inspired by Naples and its characters.</p>
+        <div class="griglia">
+          <figure class="foto"><img src="img/tammorra-blu.jpg" alt="Tammorra dipinta / Painted tammorra"><figcaption><span lang="it">Tammorra dipinta</span><span lang="en">Painted tammorra</span></figcaption></figure>
+          <figure class="foto"><img src="img/tamburello-dipinto.jpg" alt="Tamburello dipinto / Painted tambourine"><figcaption><span lang="it">Tamburello con ritratto</span><span lang="en">Tambourine with portrait</span></figcaption></figure>
+          <figure class="foto"><img src="img/orecchini.jpg" alt="Orecchini dipinti / Painted earrings"><figcaption><span lang="it">Orecchini dipinti a mano</span><span lang="en">Hand-painted earrings</span></figcaption></figure>
+          <figure class="foto"><img src="img/cornetti.jpg" alt="Cornetti portafortuna / Lucky horns"><figcaption><span lang="it">Cornetti portafortuna</span><span lang="en">Lucky charms</span></figcaption></figure>
+        </div>
+      </section>
+
+      <!-- ================= DOVE SIAMO ================= -->
+      <section id="dove-siamo">
+        <h2><span lang="it">Dove siamo</span><span lang="en">Find us</span></h2>
+        <div class="due-colonne">
+          <div>
+            <div lang="it">
+              <p>Il negozio si trova in <strong>Vico San Severino 39</strong>, una traversa di Spaccanapoli (Via San Biagio dei Librai).</p>
+              <p>Per raggiungerlo dalla Stazione Centrale si dovrà percorrere il Corso Umberto e poi svoltare a destra per Via Duomo. Giunti in Via Duomo, se si è a piedi, imboccare Spaccanapoli (Via San Biagio dei Librai) e poi Vico San Severino, come indicato nella mappa.</p>
+              <p>Se si è con l'auto sarà necessario parcheggiare su Via Duomo, poiché nella zona dove si trova il negozio non è consentita la circolazione delle autovetture.</p>
+            </div>
+            <div lang="en">
+              <p>The shop is at <strong>Vico San Severino 39</strong>, a side street of Spaccanapoli (Via San Biagio dei Librai).</p>
+              <p>From the Central Station, walk along Corso Umberto and turn right into Via Duomo. On foot, from Via Duomo take Spaccanapoli (Via San Biagio dei Librai) and then Vico San Severino, as shown on the map.</p>
+              <p>If you come by car, please park on Via Duomo: cars are not allowed in the area around the shop.</p>
+            </div>
+            <a class="pulsante" href="https://share.google/CORGGJglgk35sQ9Ox" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+              <span lang="it">Apri in Google Maps</span><span lang="en">Open in Google Maps</span>
+            </a>
+          </div>
+          <div class="incorniciato mappa">
+            <iframe src="https://www.google.com/maps?q=Officina+della+Tammorra,+Vico+San+Severino+39,+Napoli&amp;z=17&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa / Map"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= DICONO DI NOI ================= -->
+      <section id="dicono-di-noi">
+        <h2><span lang="it">Dicono di noi</span><span lang="en">What people say</span></h2>
+
+        <h4><span lang="it">Le recensioni su Google</span><span lang="en">Google reviews</span></h4>
+        <div id="recensioni"></div>
+        <p>
+          <a class="pulsante" href="https://share.google/CORGGJglgk35sQ9Ox" target="_blank" rel="noopener">
+            <span class="stelle" aria-hidden="true">★★★★★</span>
+            <span lang="it">Leggi e lascia una recensione su Google</span><span lang="en">Read and leave a review on Google</span>
+          </a>
+        </p>
+
+        <h4>Tammurriata Workshop</h4>
+        <div class="due-colonne">
+          <div lang="it">
+            <p>Il C.T.S. (Centro Teatro Studi) di Napoli ha organizzato, nell'ambito di un progetto di collaborazione con il Sininen Verstas, un laboratorio di musica e danza della tammurriata e di costruzione dei tamburi tradizionali. Il laboratorio, coordinato da Paola Gargiulo con l'assistenza di Luisa Elena Mengoni (danza e tamburi), Antonio Aiese (voce e tamburi) e Massimo Fornuto (chitarra e tamburi), ha introdotto i partecipanti al contesto culturale della tammurriata e alle tecniche di base della danza, della percussione e della costruzione dei tamburi.</p>
+          </div>
+          <div lang="en">
+            <p>The C.T.S. (Centro Teatro Studi) of Naples has organized, within a collaborative project with the Sininen Verstas, a workshop on tammurriata music, dance and construction of traditional drums. The workshop, coordinated by Paola Gargiulo with the assistance of Luisa Elena Mengoni (dance and drums), Antonio Aiese (voice and drums) and Massimo Fornuto (guitar and drums), introduced the participants to the cultural background of tammurriata, as well as to the basic techniques of dancing, drumming and drums construction.</p>
+          </div>
+          <figure class="foto">
+            <img src="img/costumi.jpg" alt="Costumi tradizionali / Traditional costumes">
+            <figcaption><span lang="it">Feste e tradizioni</span><span lang="en">Feasts and traditions</span></figcaption>
+          </figure>
+        </div>
+        <div lang="it">
+          <p>La “tammurriata” è un'espressione musicale ritmico-melodica della Campania, caratterizzata da una forma specifica di musica, canto e danza. Prende il nome dalla “tammorra”, un tamburo fatto di un telaio circolare di legno a cui sono fissati una pelle di capra e alcuni dischetti di metallo (cembali). L'origine della musica e della danza è ancora incerta, anche se alcuni dipinti di Pompei mostrano musicisti che suonano uno strumento molto simile alla tammorra o al più piccolo “tamburello”.</p>
+          <p>La tammurriata è ancora praticata in molti paesi intorno a Napoli e nell'area vesuviana durante le feste religiose, che si svolgono soprattutto dalla primavera fino ad agosto. Le date delle feste sono fissate in base al calendario pasquale e sono legate al culto della Vergine Maria nelle sue diverse manifestazioni: la Madonna dei Bagni a Scafati, la Madonna di Castello a Somma Vesuviana, la Madonna dell'Avvocata a Maiori, la Madonna Nera a Montevergine, la Madonna delle Galline a Pagani, la Madonna dell'Arco e la Madonna di Villa di Briano. Questo aspetto religioso si unisce a un significato pagano e più ancestrale, legato alla vita contadina, al ciclo delle stagioni e del lavoro nei campi, alla celebrazione della primavera e dei primi raccolti.</p>
+          <p>La musica si basa su un ritmo binario, suonato da un solo musicista (solo a Maiori la musica è suonata da più tamburi); per questo la tammurriata è detta anche “canto sul tamburo”. I testi dei canti hanno sia una connotazione religiosa sia un forte sapore pagano, specialmente nei doppi sensi a sfondo sessuale. Le melodie sono intonate da uno o più cantatori, che spesso inseriscono nuove strofe o piccole “barzellette” sia per animare l'atmosfera sia per mostrare la propria bravura. La danza, eseguita con l'aiuto delle castagnette, rappresenta un gioco d'amore tra un uomo e una donna, oppure una sfida o una gara quando è ballata da due uomini o due donne. Musica, testi e danza presentano variazioni più o meno evidenti a seconda della zona o del paese.</p>
+          <p>Un importante lavoro di ricerca è stato svolto da Roberto De Simone negli anni '70, con la realizzazione di un'ampia raccolta di registrazioni di canti eseguiti dai più noti interpreti della musica popolare campana (Roberto De Simone, <em>Canti e tradizioni popolari in Campania</em>, Roma: Lato Side Editori, 1979).</p>
+        </div>
+        <div lang="en">
+          <p>“Tammurriata” is a rhythmic-melodic musical expression of the Campania region, characterized by a specific form of music, song and dance. “Tammurriata” takes its name from the “tammorra” drum, made with a circular wooden frame to which is attached a goat skin and some metal discs (cymbals). The origin of the music and the dance is still uncertain, although a few paintings in Pompeii show musicians playing an instrument quite similar to the tammorra or the smaller “tamburello”.</p>
+          <p>The tammurriata is still practiced in a number of villages around Naples and in the area of Vesuvius during religious celebrations which take place especially from spring time until August. The dates of the festivities are fixed according to the Easter calendar and are connected with the celebration of the Virgin Mary in various and different manifestations. We thus have the Madonna di Bagni in Scafati, the Madonna of the Castle in Somma Vesuviana, the Madonna of the Avvocata in Maiori, the Black Madonna in Montevergine, the Madonna of the Hens in Pagani, the Madonna dell'Arco and the Madonna of Villa di Briano. This religious aspect is combined with a pagan and more ancestral meaning, related to the peasants' life, the cycle of the seasons and of the work in the fields, and the celebration of the spring and the first harvests.</p>
+          <p>The music is based on a binary rhythm, played by one musician (only in Maiori the music is played by several drummers); that is why tammurriata is also called “song on the drum”. The texts of the songs have both a religious connotation and a strong pagan flavour, especially in the ambiguities with a sexual connotation. The tunes are chanted by one or more singers, who often insert new strophes or little jokes (“barzellette”) both for enlivening the atmosphere and exhibiting their ability. The dance, executed with the aid of “castagnette”, represents a love game between a man and a woman or a fight or a competition when made by two men or two women. The music, the lyrics and the dance show minor or more evident variations according to the area or the village.</p>
+          <p>A specific research work was made by Roberto De Simone during the '70s with the production of an extensive recording of chants made by the most renowned personalities of folk music in the Campania region (Roberto De Simone, <em>Canti e tradizioni popolari in Campania</em>, Roma: Lato Side Editori, 1979).</p>
+        </div>
+      </section>
+
+      <!-- ================= VIDEO ================= -->
+      <section id="video">
+        <h2>Video</h2>
+        <div class="incorniciato video">
+          <iframe src="https://www.youtube-nocookie.com/embed/LpRX2CMcBbI?autoplay=1&amp;mute=1&amp;loop=1&amp;playlist=LpRX2CMcBbI&amp;playsinline=1&amp;rel=0&amp;modestbranding=1"
+                  title="Officina della Tammorra – video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </section>
+
+      <!-- ================= CONTATTI ================= -->
+      <section id="contatti">
+        <h2><span lang="it">Contatti</span><span lang="en">Contact</span></h2>
+        <div class="due-colonne">
+          <div class="riquadro">
+            <h3>Officina della Tammorra</h3>
+            <ul class="contatti-lista">
+              <li>Vico San Severino, 39<br>80143 Napoli (<span lang="it">Italia</span><span lang="en">Italy</span>)</li>
+              <li><span lang="it">Telefono</span><span lang="en">Phone</span>: <a href="tel:+393494736211">+39 349 473 6211</a></li>
+              <li>Email: <a href="mailto:info@officinadellatammorra.it">info@officinadellatammorra.it</a></li>
+            </ul>
+          </div>
+          <div class="riquadro">
+            <h3><span lang="it">Scrivici e seguici</span><span lang="en">Message and follow us</span></h3>
+            <a class="pulsante" href="https://wa.me/393494736211" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+              WhatsApp
+            </a>
+            <a class="pulsante" href="https://www.instagram.com/officinadellatammorra1/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+              Instagram
+            </a>
+            <a class="pulsante" href="mailto:info@officinadellatammorra.it">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+              Email
+            </a>
+            <a class="pulsante" href="https://www.facebook.com/pages/Officina-Della-Tammorra/116208955119425" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8V6.5c0-.7.2-1.2 1.2-1.2H17V2.2A24 24 0 0 0 14.5 2C12 2 10.5 3.5 10.5 6.2V8H8v3.3h2.5V22H14V11.3h2.7L17 8z"/></svg>
+              Facebook
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer>Officina della Tammorra · <span lang="it">i suoni di una volta</span><span lang="en">the sounds of yesteryear</span> · Vico San Severino 39, Napoli</footer>
+</div>
+
+<!-- Pulsanti fissi: musica e WhatsApp -->
+<button type="button" class="fisso musica-fisso" id="musica" aria-pressed="false" aria-label="Musica / Music" title="Musica / Music" hidden>
+  <svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+  <svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/><path d="M3 3l18 18"/></svg>
+</button>
+<!-- Musica di sottofondo: mettere il proprio brano nella cartella "audio" con il nome "musica"
+     (musica.mp3, musica.m4a, musica.ogg o musica.wav). Senza file il pulsante non compare. -->
+<audio id="sottofondo" loop preload="auto">
+  <source src="audio/musica.mp3" type="audio/mpeg">
+  <source src="audio/musica.m4a" type="audio/mp4">
+  <source src="audio/musica.ogg" type="audio/ogg">
+  <source src="audio/musica.wav" type="audio/wav">
+</audio>
+
+<a class="fisso whatsapp-fisso" href="https://wa.me/393494736211" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/></svg>
+</a>
+
+<div class="lightbox" id="lightbox" aria-hidden="true"><img alt=""></div>
+
+<script>
+  /* ---------- Recensioni Google ----------
+     Copiare qui le recensioni reali dalla scheda Google, ad esempio:
+     { autore: 'Nome', stelle: 5, it: 'Testo in italiano', en: 'English text' },  */
+  const RECENSIONI = [
+  ];
+
+  const contenitore = document.getElementById('recensioni');
+  RECENSIONI.forEach(r => {
+    const q = document.createElement('blockquote');
+    const stelle = '★'.repeat(r.stelle) + '☆'.repeat(5 - r.stelle);
+    q.innerHTML = '<span class="stelle"></span><br><span lang="it"></span><span lang="en"></span><cite></cite>';
+    q.querySelector('.stelle').textContent = stelle;
+    q.querySelector('[lang=it]').textContent = r.it;
+    q.querySelector('[lang=en]').textContent = r.en || r.it;
+    q.querySelector('cite').textContent = '— ' + r.autore + ', Google';
+    contenitore.appendChild(q);
+  });
+
+  /* ---------- Lingua ---------- */
+  function impostaLingua(lingua) {
+    document.documentElement.dataset.lang = lingua;
+    document.documentElement.lang = lingua;
+    document.querySelectorAll('[data-imposta-lingua]').forEach(b =>
+      b.setAttribute('aria-pressed', b.dataset.impostaLingua === lingua));
+    try { localStorage.setItem('lingua', lingua); } catch (e) {}
+  }
+  document.querySelectorAll('[data-imposta-lingua]').forEach(b =>
+    b.addEventListener('click', () => impostaLingua(b.dataset.impostaLingua)));
+  let linguaIniziale = 'it';
+  try { linguaIniziale = localStorage.getItem('lingua') || (navigator.language.startsWith('it') ? 'it' : 'en'); } catch (e) {}
+  impostaLingua(linguaIniziale);
+
+  /* ---------- Musica di sottofondo ----------
+     I browser non permettono l'audio automatico: la musica parte al primo clic o tocco sulla pagina. */
+  const audio = document.getElementById('sottofondo');
+  const pulsanteMusica = document.getElementById('musica');
+  audio.volume = 0.35;
+  let musicaVoluta = true;
+  try { musicaVoluta = localStorage.getItem('musica') !== 'no'; } catch (e) {}
+
+  function aggiornaPulsante() { pulsanteMusica.setAttribute('aria-pressed', !audio.paused); }
+  audio.addEventListener('canplay', () => { pulsanteMusica.hidden = false; }, { once: true });
+  audio.addEventListener('play', aggiornaPulsante);
+  audio.addEventListener('pause', aggiornaPulsante);
+
+  pulsanteMusica.addEventListener('click', e => {
+    e.stopPropagation();
+    if (audio.paused) { audio.volume = 0.35; audio.play(); musicaVoluta = true; } else { audio.pause(); musicaVoluta = false; }
+    try { localStorage.setItem('musica', musicaVoluta ? 'si' : 'no'); } catch (e) {}
+  });
+
+  function avviaMusica() {
+    if (!musicaVoluta || !audio.paused) return;
+    audio.volume = 0;
+    audio.play().then(() => {
+      const dissolvenza = setInterval(() => {
+        audio.volume = Math.min(0.35, audio.volume + 0.02);
+        if (audio.volume >= 0.35) clearInterval(dissolvenza);
+      }, 100);
+    }).catch(() => {});
+  }
+  avviaMusica();
+  ['pointerdown', 'keydown'].forEach(evento =>
+    document.addEventListener(evento, avviaMusica, { once: true }));
+
+  /* ---------- Lightbox ---------- */
+  const box = document.getElementById('lightbox');
+  const boxImg = box.querySelector('img');
+  document.querySelectorAll('.foto img').forEach(img => {
+    img.addEventListener('click', () => {
+      boxImg.src = img.src;
+      boxImg.alt = img.alt;
+      box.classList.add('aperta');
+    });
+  });
+  box.addEventListener('click', () => box.classList.remove('aperta'));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') box.classList.remove('aperta'); });
+</script>
+</body>
+</html>
