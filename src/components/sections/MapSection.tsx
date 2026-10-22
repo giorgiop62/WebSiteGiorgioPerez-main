@@ -3,8 +3,8 @@ import { saveConsent, useConsent } from "@/lib/consent";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
 
-// Scheda Google di Ermes Media (Knowledge Graph /g/11xd8f14km)
-const MAPS_URL = "https://share.google/0mCoXZizpqh6bWbV7";
+// Scheda Google Maps di Ermes Media (CID 0x17bd057923e3b4a4, Knowledge Graph /g/11xd8f14km)
+const MAPS_URL = "https://www.google.com/maps?cid=1710529451321963684";
 const EMBED_URL =
   "https://www.google.com/maps?q=Via%20Santa%20Maria%20Antesaecula%2C%20112%2C%2080137%20Napoli%20NA&z=17&output=embed";
 
