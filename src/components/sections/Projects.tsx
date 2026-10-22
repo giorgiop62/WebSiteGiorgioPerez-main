@@ -4,6 +4,7 @@ import p5 from "@/assets/project-5.webp";
 import p6 from "@/assets/project-6.webp";
 import p7 from "@/assets/project-7.webp";
 import p8 from "@/assets/project-8.webp";
+import p9 from "@/assets/project-9.webp";
 import { ArrowUpRight } from "lucide-react";
 import { useReveal } from "@/hooks/useReveal";
 import { useI18n } from "@/lib/i18n";
@@ -16,6 +17,7 @@ const projectImages = [
   { src: p6, width: 1200, height: 649 },
   { src: p7, width: 1200, height: 600 },
   { src: p8, width: 1200, height: 600 },
+  { src: p9, width: 1200, height: 600 },
 ];
 
 export const Projects = () => {
